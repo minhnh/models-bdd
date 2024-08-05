@@ -1,0 +1,34 @@
+{
+    "@context": [
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/simulation.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/distribution.json",
+        {
+            "lab-env": "https://secorolab.github.io/models/environments/secorolab/",
+            "lab-sim": "https://secorolab.github.io/models/simulation/isaac/",
+            "exec": "https://secorolab.github.io/models/execution/isaac-pickplace/"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "exec:obj-table-sim", "@type": "sim:SimulatedObject",
+            "of-object": "lab-env:obj-table", "object-model": "lab-sim:obj-thorlabs-table"
+        },
+        {
+            "@id": "exec:obj-box-sim", "@type": "sim:SimulatedObject",
+            "of-object": "lab-env:obj-box", "object-model": "lab-sim:obj-ycb-sugar-box"
+        },
+        {
+            "@id": "exec:obj-mug-sim", "@type": "sim:SimulatedObject",
+            "of-object": "lab-env:obj-mug", "object-model": "lab-sim:obj-ycb-mug"
+        },
+        {
+            "@id": "exec:obj-ball-sim", "@type": "sim:SimulatedObject",
+            "of-object": "lab-env:obj-ball", "object-model": "lab-sim:isaac-sphere",
+            "has-config": {
+                "scale": [0.0315, 0.0315, 0.0315], "size": 1.0, "color": [1, 0, 1]
+            }
+        }
+    ]
+}
