@@ -1,0 +1,122 @@
+{
+    "@context": [
+        "https://comp-rob2b.github.io/metamodels/geometry/coordinates.json",
+        "https://comp-rob2b.github.io/metamodels/geometry/spatial-relations.json",
+        "https://comp-rob2b.github.io/metamodels/qudt.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/geometry-exts.json",
+        {
+            "sim-pickup": "https://secorolab.github.io/models/simulation/pickup/",
+
+            "env-secoro": "https://secorolab.github.io/models/environments/secorolab/",
+            "env-avl": "https://secorolab.github.io/models/environments/avl/"
+        }
+    ],
+    "@graph": [
+        { "@id": "sim-pickup:world-frame-origin", "@type": "Point" },
+        { "@id": "sim-pickup:world-frame", "@type": "Frame", "origin": "world-frame-origin" },
+
+        {
+            "@id": "sim-pickup:box-position", "@type": "Position",
+            "of": "env-secoro:box-origin",
+            "with-respect-to": "sim-pickup:world-frame-origin"
+        },
+        {
+            "@id": "sim-pickup:box-orientation", "@type": "Orientation",
+            "of": "env-secoro:box-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:box-pose", "@type": "Pose",
+            "of": "env-secoro:box-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:box-pose-from-position-orientation",
+            "@type": [
+                "PoseFromPositionOrientation", "PoseReference",
+                "PositionReference", "OrientationReference", "PoseCoordinate"
+            ],
+            "of-pose": "sim-pickup:box-pose",
+            "from-position": "sim-pickup:box-position",
+            "from-orientation": "sim-pickup:box-orientation"
+        },
+
+        {
+            "@id": "sim-pickup:ball-position", "@type": "Position",
+            "of": "env-secoro:ball-origin",
+            "with-respect-to": "sim-pickup:world-frame-origin"
+        },
+        {
+            "@id": "sim-pickup:ball-orientation", "@type": "Orientation",
+            "of": "env-secoro:ball-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:ball-pose", "@type": "Pose",
+            "of": "env-secoro:ball-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:ball-pose-from-position-orientation",
+            "@type": [
+                "PoseFromPositionOrientation", "PoseReference",
+                "PositionReference", "OrientationReference", "PoseCoordinate"
+            ],
+            "of-pose": "sim-pickup:ball-pose",
+            "from-position": "sim-pickup:ball-position",
+            "from-orientation": "sim-pickup:ball-orientation"
+        },
+
+        {
+            "@id": "sim-pickup:bottle-position", "@type": "Position",
+            "of": "env-secoro:bottle-origin",
+            "with-respect-to": "sim-pickup:world-frame-origin"
+        },
+        {
+            "@id": "sim-pickup:bottle-orientation", "@type": "Orientation",
+            "of": "env-secoro:bottle-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:bottle-pose", "@type": "Pose",
+            "of": "env-secoro:bottle-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:bottle-pose-from-position-orientation",
+            "@type": [
+                "PoseFromPositionOrientation", "PoseReference",
+                "PositionReference", "OrientationReference", "PoseCoordinate"
+            ],
+            "of-pose": "sim-pickup:bottle-pose",
+            "from-position": "sim-pickup:bottle-position",
+            "from-orientation": "sim-pickup:bottle-orientation"
+        },
+
+        {
+            "@id": "sim-pickup:battery-cyl-position", "@type": "Position",
+            "of": "env-avl:cylindrical1-origin",
+            "with-respect-to": "sim-pickup:world-frame-origin"
+        },
+        {
+            "@id": "sim-pickup:battery-cyl-orientation", "@type": "Orientation",
+            "of": "env-avl:cylindrical1-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:battery-cyl-pose", "@type": "Pose",
+            "of": "env-avl:cylindrical1-frame",
+            "with-respect-to": "sim-pickup:world-frame"
+        },
+        {
+            "@id": "sim-pickup:battery-cyl-pose-from-position-orientation",
+            "@type": [
+                "PoseFromPositionOrientation", "PoseReference",
+                "PositionReference", "OrientationReference", "PoseCoordinate"
+            ],
+            "of-pose": "sim-pickup:battery-cyl-pose",
+            "from-position": "sim-pickup:battery-cyl-position",
+            "from-orientation": "sim-pickup:battery-cyl-orientation"
+        }
+    ]
+}

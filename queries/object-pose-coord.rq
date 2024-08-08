@@ -1,0 +1,31 @@
+# SPDX-License-Identifier:  MPL-2.0
+PREFIX geom: <https://comp-rob2b.github.io/metamodels/geometry/structural-entities#>
+PREFIX geom-rel: <https://comp-rob2b.github.io/metamodels/geometry/spatial-relations#>
+PREFIX geom-coord: <https://comp-rob2b.github.io/metamodels/geometry/coordinates#>
+PREFIX env: <https://secorolab.github.io/metamodels/environment#>
+PREFIX trans: <https://secorolab.github.io/transformations/>
+
+CONSTRUCT {
+    ?obj a ?objType ;
+        trans:has-pose ?pose .
+    ?pose
+        geom-rel:of ?frame ;
+        geom-rel:with-respect-to ?poseOriginFrame .
+    ?poseCoord a ?poseCoordType ;
+        geom-coord:of-pose ?pose ;
+        geom-rel:with-respect-to ?poseOriginFrame ;
+        geom-rel:of ?frame .
+}
+WHERE {
+    ?body a geom:RigidBody ;
+        env:of-object ?obj ;
+        geom:simplices ?frame .
+    ?obj a ?objType .
+    ?frame a geom:Frame ;
+        ^geom-rel:of ?pose .
+    ?pose a geom-rel:Pose ;
+        geom-rel:with-respect-to ?poseOriginFrame ;
+        ^geom-coord:of-pose ?poseCoord .
+    ?poseCoord a geom-coord:PoseCoordinate ;
+        a ?poseCoordType .
+}
