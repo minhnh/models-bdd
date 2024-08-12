@@ -3,10 +3,12 @@ PREFIX bdd: <https://secorolab.github.io/metamodels/acceptance-criteria/bdd#>
 PREFIX time: <https://secorolab.github.io/metamodels/time#>
 PREFIX agn: <https://secorolab.github.io/metamodels/agent#>
 PREFIX env: <https://secorolab.github.io/metamodels/environment#>
+PREFIX bhv: <https://secorolab.github.io/metamodels/behaviour#>
 
 CONSTRUCT {
     ?us bdd:has-criteria ?scenarioVar .
     ?scenarioVar
+        bhv:of-behaviour ?behaviour ;
         bdd:of-scenario ?scenario ;
         bdd:has-scene ?scene ;
         bdd:has-variation ?scrVariable .
@@ -92,6 +94,7 @@ WHERE {
     OPTIONAL { ?specificTc time:ref-event ?tcEvent }
 
     ?scenario a bdd:Scenario ;
+        bhv:of-behaviour ?behaviour ;
         bdd:given ?given ;
         bdd:when ?when ;
         bdd:then ?then .

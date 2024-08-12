@@ -3,6 +3,7 @@
         "mm_time": "https://secorolab.github.io/metamodels/time#",
         "mm_env": "https://secorolab.github.io/metamodels/environment#",
         "mm_agn": "https://secorolab.github.io/metamodels/agent#",
+        "mm_bhv": "https://secorolab.github.io/metamodels/behaviour#",
         "mm_bdd": "https://secorolab.github.io/metamodels/acceptance-criteria/bdd#",
 
         "m": "https://secorolab.github.io/models/",
@@ -18,6 +19,7 @@
 
         "criteria": "mm_bdd:has-criteria",
         "scenario": "mm_bdd:of-scenario",
+        "behaviour": "mm_bhv:of-behaviour",
         "given": "mm_bdd:given",
         "when": "mm_bdd:when",
         "then": "mm_bdd:then",

@@ -47,7 +47,12 @@ Feature: {{ data.name }}
     {% for clause in scenario_data.given_clauses %}
     {{ clause|safe }}{% endfor %}
 
+    {%- if 'when_event' in scenario_data %}
     When "{{ scenario_data.when_event }}"
+    {%- endif %}
+
+    When behaviour "{{ scenario_data.behaviour.name }}" occurs
+
     {% for clause in scenario_data.then_clauses %}
     {{ clause|safe }}{% endfor %}
 
