@@ -10,32 +10,32 @@
     "@graph": [
         {
             "@id": "lab-sim:obj-ycb-cracker-box",
-            "@type": [ "sim:ObjectModel", "sim:IsaacResource", "sim:ResourceWithPath" ],
+            "@type": [ "sim:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/003_cracker_box.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-sugar-box",
-            "@type": [ "sim:ObjectModel", "sim:IsaacResource", "sim:ResourceWithPath" ],
+            "@type": [ "sim:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/004_sugar_box.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-tomato-soup-can",
-            "@type": [ "sim:ObjectModel", "sim:IsaacResource", "sim:ResourceWithPath" ],
+            "@type": [ "sim:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/005_tomato_soup_can.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-mustard-bottle",
-            "@type": [ "sim:ObjectModel", "sim:IsaacResource", "sim:ResourceWithPath" ],
+            "@type": [ "sim:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/006_mustard_bottle.usd"
         },
         {
             "@id": "lab-sim:obj-thorlabs-table",
-            "@type": [ "sim:ObjectModel", "sim:IsaacResource", "sim:ResourceWithPath" ],
+            "@type": [ "sim:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "sim:path": "/Isaac/Props/Mounts/ThorlabsTable/table_instanceable.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-mug",
-            "@type": [ "sim:ObjectModel", "sim:SystemResource", "sim:ResourceWithPath" ],
+            "@type": [ "sim:ObjectModel", "sim:SystemResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "sim:path": "/home/minh/ws/isaacsim/ycb/025_mug-physics.usd"
         },
         {

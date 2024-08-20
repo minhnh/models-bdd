@@ -22,6 +22,7 @@
         {
             "@id": "tmpl:scenario-pickplace", "@type": "bdd:Scenario",
             "of-behaviour": "tmpl:bhv-pickplace",
+            "of-task": "tmpl:task-pickplace",
             "given": "tmpl:pickplace-given",
             "when": "tmpl:pickplace-when",
             "then": "tmpl:pickplace-then"

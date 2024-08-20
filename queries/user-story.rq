@@ -9,6 +9,7 @@ CONSTRUCT {
     ?us bdd:has-criteria ?scenarioVar .
     ?scenarioVar
         bhv:of-behaviour ?behaviour ;
+        bdd:of-template ?scenarioTmpl ;
         bdd:of-scenario ?scenario ;
         bdd:has-scene ?scene ;
         bdd:has-variation ?scrVariable .

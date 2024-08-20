@@ -28,10 +28,18 @@
             "of-object": "lab-env:obj-mug", "object-model": "lab-sim:obj-ycb-mug"
         },
         {
+            "@id": "exec:obj-bottle-sim", "@type": "sim:SimulatedObject",
+            "of-object": "lab-env:obj-bottle", "object-model": "lab-sim:obj-ycb-mustard-bottle"
+        },
+        {
+            "@id": "exec:obj-table-sim", "@type": "sim:SimulatedObject",
+            "of-object": "lab-env:obj-table", "object-model": "lab-sim:-thorlabs-table"
+        },
+        {
             "@id": "exec:obj-ball-sim", "@type": "sim:SimulatedObject",
             "of-object": "lab-env:obj-ball", "object-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "size": 1.0, "color": [1, 0, 1]
+                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1]
             }
         },
         {

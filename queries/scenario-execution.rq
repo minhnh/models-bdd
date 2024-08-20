@@ -4,6 +4,8 @@ PREFIX bdd: <https://secorolab.github.io/metamodels/acceptance-criteria/bdd#>
 
 CONSTRUCT {
     ?scenarioExec a ?execType ;
+        bdd:of-variant ?scenarioVar ;
+        bdd:of-template ?scenarioTmpl ;
         bdd:has-behaviour-impl ?bhvImpl .
 #        bdd:has-fluent-impl ?fluentImpl .
     ?bhvImpl a ?bhvImplType ;
@@ -18,7 +20,10 @@ WHERE {
 #        bdd:has-fluent-impl ?fluentImpl .
 
     ?scenarioVar a bdd:ScenarioVariant ;
-        bdd:of-template / bdd:of-scenario / bhv:of-behaviour ?behaviour .
+        bdd:of-template ?scenarioTmpl .
+
+    ?scenarioTmpl a bdd:ScenarioTemplate ;
+        bdd:of-scenario / bhv:of-behaviour ?behaviour .
 
     ?bhvImpl a ?bhvImplType ;
         bhv:of-behaviour ?behaviour .
