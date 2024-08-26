@@ -33,7 +33,7 @@
         },
         {
             "@id": "exec:obj-table-sim", "@type": "sim:SimulatedObject",
-            "of-object": "lab-env:obj-table", "object-model": "lab-sim:-thorlabs-table"
+            "of-object": "lab-env:obj-table", "object-model": "lab-sim:obj-thorlabs-table"
         },
         {
             "@id": "exec:obj-ball-sim", "@type": "sim:SimulatedObject",

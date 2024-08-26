@@ -4,7 +4,7 @@ PREFIX sim: <https://secorolab.github.io/metamodels/simulation#>
 PREFIX py: <https://secorolab.github.io/metamodels/languages/python#>
 
 CONSTRUCT {
-    ?obj sim:object-model ?objModel ;
+    ?obj env:object-model ?objModel ;
         sim:has-config ?objConfigs .
     ?objModel a ?objModelType ;
         sim:path ?resourcePath ;
@@ -16,12 +16,12 @@ WHERE {
         ^ env:of-object ?simObj .
 
     ?simObj a sim:SimulatedObject ;
-        sim:object-model ?objModel .
+        env:object-model ?objModel .
     OPTIONAL {
         ?simObj sim:has-config ?objConfigs .
     }
 
-    ?objModel a sim:ObjectModel ;
+    ?objModel a env:ObjectModel ;
         a ?objModelType .
     OPTIONAL {
         ?objModel a sim:ResourceWithPath ;
