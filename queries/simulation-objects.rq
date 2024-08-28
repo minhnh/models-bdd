@@ -13,12 +13,12 @@ CONSTRUCT {
 }
 WHERE {
     ?obj a env:Object ;
-        ^ env:of-object ?simObj .
+        ^ env:of-object ?modObj .
 
-    ?simObj a sim:SimulatedObject ;
+    ?modObj a env:ModelledObject ;
         env:object-model ?objModel .
     OPTIONAL {
-        ?simObj sim:has-config ?objConfigs .
+        ?modObj sim:has-config ?objConfigs .
     }
 
     ?objModel a env:ObjectModel ;
