@@ -11,7 +11,9 @@
         "m_bddvar": "m_bdd:variants/pickplace-isaac/",
         "m_tmpl": "m_bdd:templates/",
         "m_scene": "m_bdd:scenes/",
-        "m_labenv": "m:environments/secorolab/",
+        "m_agn_isaac": "m:agents/isaac-sim/",
+        "m_scene_lab": "m_bdd:scenes/secorolab/",
+        "m_env_lab": "m:environments/secorolab/",
 
         "name": "@id",
         "data": "@graph",

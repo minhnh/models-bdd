@@ -30,9 +30,9 @@ CONSTRUCT {
         bdd:ref-workspace ?taskWorkspace ;
         bdd:ref-agent ?taskAgent ;
         bdd:holds ?fluent ;
-        bdd:holds-at ?specificTc .
+        bdd:holds-at ?timeConstraint  .
     ?fluent a ?fluentType .
-    ?specificTc a ?tcType ;
+    ?timeConstraint a ?tcType ;
         time:ref-event ?tcEvent .
 }
 WHERE {
@@ -90,9 +90,11 @@ WHERE {
 
     ?fluent a ?fluentType .
 
-    ?timeConstraint ^ time:of-constraint ?specificTc .
-    ?specificTc a ?tcType .
-    OPTIONAL { ?specificTc time:ref-event ?tcEvent }
+    ?timeConstraint a time:TimeConstraint ;
+        a ?tcType .
+    OPTIONAL {
+        ?timeConstraint time:ref-event ?tcEvent
+    }
 
     ?scenario a bdd:Scenario ;
         bhv:of-behaviour ?behaviour ;

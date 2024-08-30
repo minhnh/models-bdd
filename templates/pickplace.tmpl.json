@@ -38,21 +38,12 @@
         },
 
         {
-           "@id": "tmpl:ftc-before-pick", "@type": "time:TimeConstraint"
+           "@id": "tmpl:ftc-before-pick", "@type": ["time:TimeConstraint", "time:BeforeEventConstraint"],
+           "ref-event": "tmpl:evt-pick-start"
         },
         {
-           "@id": "tmpl:ftc-after-place", "@type": "time:TimeConstraint"
-        },
-
-        {
-           "@id": "tmpl:bec-before-evt-pick", "@type": "time:BeforeEventConstraint",
-           "ref-event": "tmpl:evt-pick-start",
-           "of-constraint": "tmpl:ftc-before-pick"
-        },
-        {
-           "@id": "tmpl:bec-after-evt-place", "@type": "time:AfterEventConstraint",
-           "ref-event": "tmpl:evt-place-end",
-           "of-constraint": "tmpl:ftc-after-place"
+           "@id": "tmpl:ftc-after-place", "@type": ["time:TimeConstraint", "time:AfterEventConstraint"],
+           "ref-event": "tmpl:evt-place-end"
         },
 
         {
