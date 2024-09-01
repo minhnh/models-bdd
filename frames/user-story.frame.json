@@ -32,7 +32,6 @@
         "var_obj": "mm_bdd:ref-object",
         "var_ws": "mm_bdd:ref-workspace",
         "var_agn": "mm_bdd:ref-agent",
-        "can_be": "mm_bdd:can-be",
 
         "event": "mm_time:ref-event",
         "objects": "mm_env:has-object",

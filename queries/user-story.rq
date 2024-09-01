@@ -12,12 +12,12 @@ CONSTRUCT {
         bdd:of-template ?scenarioTmpl ;
         bdd:of-scenario ?scenario ;
         bdd:has-scene ?scene ;
-        bdd:has-variation ?scrVariable .
+        bdd:has-variation ?taskVariation .
     ?scene a ?sceneElemType ;
         env:has-object ?sceneObj ;
         env:has-workspace ?sceneWs ;
         agn:has-agent ?sceneAgent .
-    ?scrVariable bdd:can-be ?scrVariableVal .
+    ?taskVariation a ?varType .
     ?scenario
         bdd:ref-object ?taskObject ;
         bdd:ref-workspace ?taskWorkspace ;
@@ -68,8 +68,7 @@ WHERE {
     }
 
     ?taskVariation a bdd:TaskVariation ;
-        bdd:of-variable ?scrVariable ;
-        bdd:can-be ?scrVariableVal .
+        a ?varType .
 
     {
         { ?scenarioVar bdd:has-clause ?clause . }
