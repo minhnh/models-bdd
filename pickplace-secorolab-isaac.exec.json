@@ -9,7 +9,7 @@
         {
             "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
-            "lab-env": "https://secorolab.github.io/models/environments/secorolab/",
+            "lab": "https://secorolab.github.io/models/environments/secorolab/",
             "lab-sim": "https://secorolab.github.io/models/simulation/isaac/",
             "exec": "https://secorolab.github.io/models/execution/isaac-pickplace/"
         }
@@ -17,27 +17,27 @@
     "@graph": [
         {
             "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
-            "of-object": "lab-env:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table"
+            "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table"
         },
         {
             "@id": "exec:obj-box-sim", "@type": "env:ModelledObject",
-            "of-object": "lab-env:obj-box", "has-obj-model": "lab-sim:obj-ycb-sugar-box"
+            "of-object": "lab:obj-box", "has-obj-model": "lab-sim:obj-ycb-sugar-box"
         },
         {
             "@id": "exec:obj-mug-sim", "@type": "env:ModelledObject",
-            "of-object": "lab-env:obj-mug", "has-obj-model": "lab-sim:obj-ycb-mug"
+            "of-object": "lab:obj-mug", "has-obj-model": "lab-sim:obj-ycb-mug"
         },
         {
             "@id": "exec:obj-bottle-sim", "@type": "env:ModelledObject",
-            "of-object": "lab-env:obj-bottle", "has-obj-model": "lab-sim:obj-ycb-mustard-bottle"
+            "of-object": "lab:obj-bottle", "has-obj-model": "lab-sim:obj-ycb-mustard-bottle"
         },
         {
             "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
-            "of-object": "lab-env:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table"
+            "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table"
         },
         {
             "@id": "exec:obj-ball-sim", "@type": "env:ModelledObject",
-            "of-object": "lab-env:obj-ball", "has-obj-model": "lab-sim:isaac-sphere",
+            "of-object": "lab:obj-ball", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
                 "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1]
             }

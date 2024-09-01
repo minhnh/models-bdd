@@ -19,11 +19,6 @@
             "select": 1, "from": [ "lab:obj-bottle", "lab:obj-ball" ]
         },
         {
-            "@id": "comb-agents", "@type": "bdd:Combination",
-            "repetition-allowed": "false",
-            "select": 1, "from": [ "isaac:panda" ]
-        },
-        {
             "@id": "comb-workspaces", "@type": "bdd:Combination",
             "repetition-allowed": "false",
             "select": 1, "from": [ "lab:ws-table", "lab:ws-shelf" ]
@@ -31,21 +26,20 @@
         {
             "@id": "var-table", "@type": [ "bdd:TaskVariation", "bdd:TableVariation" ],
             "of-task": "tmpl:task-pickplace",
-            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-agent", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
+            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
             "rows": [
-                [ "lab:obj-bottle", "isaac:panda", "lab:ws-table", "lab:ws-shelf" ],
-                [ "lab:obj-ball", "isaac:panda", "lab:ws-table", "lab:ws-shelf" ],
-                [ "lab:obj-bottle", "isaac:panda", "lab:ws-shelf", "lab:ws-table" ],
-                [ "lab:obj-ball", "isaac:panda", "lab:ws-table", "lab:ws-table" ]
+                [ "lab:obj-bottle", "lab:ws-table", "lab:ws-shelf" ],
+                [ "lab:obj-ball", "lab:ws-table", "lab:ws-shelf" ],
+                [ "lab:obj-bottle", "lab:ws-shelf", "lab:ws-table" ],
+                [ "lab:obj-ball", "lab:ws-table", "lab:ws-table" ]
             ]
         },
         {
             "@id": "var-product", "@type": [ "bdd:TaskVariation", "bdd:CartesianProductVariation" ],
             "of-task": "tmpl:task-pickplace",
-            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-agent", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
+            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
             "of-sets": [
                 [ "lab:obj-bottle", "lab:obj-ball" ],
-                [ "isaac:panda" ],
                 "var:comb-workspaces",
                 [ "lab:ws-table", "lab:ws-shelf" ]
             ]
@@ -58,7 +52,7 @@
                 "scene-lab:scn-pickplace-secorolab-workspaces",
                 "scene-isaac:scn-pickplace-isaac-panda"
             ],
-            "has-variation": "var-product"
+            "has-variation": "var-table"
         },
         {
             "@id": "us-pickplace", "@type": "bdd:UserStory",
