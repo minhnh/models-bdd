@@ -2,6 +2,7 @@
     "@context": [
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/agent.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/simulation.json",
         "https://secorolab.github.io/metamodels/languages/python.json",
         {
@@ -9,6 +10,10 @@
         }
     ],
     "@graph": [
+        {
+            "@id": "lab-sim:isaac-franka", "@type": [ "agn:AgentModel", "py:ModuleAttribute", "py:Class" ],
+            "py:module-name": "omni.isaac.franka", "py:attribute-name": " Franka"
+        },
         {
             "@id": "lab-sim:obj-ycb-cracker-box",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],

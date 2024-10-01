@@ -4,6 +4,7 @@
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/behaviour.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/agent.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/simulation.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/distribution.json",
         {
@@ -11,13 +12,22 @@
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
             "lab": "https://secorolab.github.io/models/environments/secorolab/",
             "lab-sim": "https://secorolab.github.io/models/simulation/isaac/",
+            "isaac-agn": "https://secorolab.github.io/models/agents/isaac-sim/",
             "exec": "https://secorolab.github.io/models/execution/isaac-pickplace/"
         }
     ],
     "@graph": [
         {
+            "@id": "exec:agn-panda-sim", "@type": "agn:ModelledAgent",
+            "of-agent": "isaac-agn:panda", "has-agn-model": "lab-sim:isaac-franka"
+        },
+        {
             "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table"
+        },
+        {
+            "@id": "exec:obj-shelf-sim", "@type": "env:ModelledObject",
+            "of-object": "lab:obj-shelf", "has-obj-model": "lab-sim:obj-thorlabs-table"
         },
         {
             "@id": "exec:obj-box-sim", "@type": "env:ModelledObject",

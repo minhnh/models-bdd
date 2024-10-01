@@ -6,7 +6,6 @@
             "@base": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
             "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
-            "isaac": "https://secorolab.github.io/models/agents/isaac-sim/",
             "lab": "https://secorolab.github.io/models/environments/secorolab/",
             "scene-lab": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/",
             "scene-isaac": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/isaac/"
