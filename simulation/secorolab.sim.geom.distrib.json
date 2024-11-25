@@ -3,9 +3,9 @@
         "https://comp-rob2b.github.io/metamodels/geometry/coordinates.json",
         "https://comp-rob2b.github.io/metamodels/geometry/spatial-relations.json",
         "https://comp-rob2b.github.io/metamodels/qudt.json",
+        "https://secorolab.github.io/metamodels/probability/distribution.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/simulation.json",
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/distribution.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/geometry-exts.json",
         {
             "@base": "https://secorolab.github.io/models/simulation/pickup/",
@@ -37,7 +37,6 @@
         {
             "@id": "sampled-box-orientation",
             "@type": [ "SampledQuantity", "OrientationReference", "OrientationCoordinate", "DirectionCosineXYZ" ],
-            "unit": "M",
             "of-orientation": "box-orientation",
             "from-distribution": "uniform-rotation"
         },

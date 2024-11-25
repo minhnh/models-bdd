@@ -13,13 +13,13 @@
     "@graph": [
         {
             "@id": "var:comb-objects", "@type": "bdd:Combination",
-            "repetition-allowed": "false",
-            "select": 1, "from": [ "lab:obj-bottle", "lab:obj-ball" ]
+            "repetition": "false",
+            "length": 1, "from": [ "lab:obj-bottle", "lab:obj-ball" ]
         },
         {
             "@id": "var:comb-workspaces", "@type": "bdd:Combination",
-            "repetition-allowed": "false",
-            "select": 1, "from": [ "lab:ws-table", "lab:ws-shelf" ]
+            "repetition": "false",
+            "length": 1, "from": [ "lab:ws-table", "lab:ws-shelf" ]
         },
         {
             "@id": "var:var-table", "@type": [ "bdd:TaskVariation", "bdd:TableVariation" ],
@@ -50,7 +50,7 @@
                 "scene-lab:scn-pickplace-secorolab-workspaces",
                 "scene-isaac:scn-pickplace-isaac-panda"
             ],
-            "has-variation": "var:var-table"
+            "has-variation": "var:var-product"
         },
         {
             "@id": "var:us-pickplace", "@type": "bdd:UserStory",

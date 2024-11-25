@@ -1,12 +1,12 @@
 {
     "@context": [
         "https://secorolab.github.io/metamodels/languages/python.json",
+        "https://secorolab.github.io/metamodels/probability/distribution.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/behaviour.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/agent.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/simulation.json",
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/distribution.json",
         {
             "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",

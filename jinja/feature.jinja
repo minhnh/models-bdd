@@ -42,6 +42,6 @@ Feature: {{ data.name }}
     Examples:
     |{% for var_name in scenario_data.variables %} {{ var_name }} | {%- endfor %}
     {% for var_data in scenario_data.variations -%}
-      |{% for entity_name in var_data %} {{ entity_name }} |{% endfor %}
+      |{% for entity_name in var_data %} {{ entity_name|safe }} |{% endfor %}
     {% endfor %}
 {%- endfor -%}
