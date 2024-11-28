@@ -35,14 +35,19 @@
             "path": "/Isaac/Props/YCB/Axis_Aligned_Physics/006_mustard_bottle.usd"
         },
         {
-            "@id": "lab-sim:obj-thorlabs-table",
-            "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "path": "/Isaac/Props/Mounts/ThorlabsTable/table_instanceable.usd"
-        },
-        {
             "@id": "lab-sim:obj-ycb-mug",
             "@type": [ "env:ObjectModel", "sim:SystemResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "path": "/home/minh/ws/isaacsim/ycb/025_mug-physics.usd"
+        },
+        {
+            "@id": "lab-sim:obj-klt-bin",
+            "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
+            "path": "/Isaac/Props/KLT_Bin/small_KLT.usd"
+        },
+        {
+            "@id": "lab-sim:obj-thorlabs-table",
+            "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
+            "path": "/Isaac/Props/Mounts/ThorlabsTable/table_instanceable.usd"
         },
         {
             "@id": "lab-sim:isaac-cuboid", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],

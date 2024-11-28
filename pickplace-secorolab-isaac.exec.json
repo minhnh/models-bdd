@@ -30,6 +30,14 @@
             "of-object": "lab:obj-shelf", "has-obj-model": "lab-sim:obj-thorlabs-table"
         },
         {
+            "@id": "exec:obj-bin1-sim", "@type": "env:ModelledObject",
+            "of-object": "lab:obj-bin1", "has-obj-model": "lab-sim:obj-klt-bin"
+        },
+        {
+            "@id": "exec:obj-bin2-sim", "@type": "env:ModelledObject",
+            "of-object": "lab:obj-bin2", "has-obj-model": "lab-sim:obj-klt-bin"
+        },
+        {
             "@id": "exec:obj-box-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-box", "has-obj-model": "lab-sim:obj-ycb-sugar-box"
         },

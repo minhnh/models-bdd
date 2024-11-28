@@ -1,0 +1,50 @@
+{
+    "@context": [
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/task.json",
+        {
+            "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
+            "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
+            "lab": "https://secorolab.github.io/models/environments/secorolab/",
+            "scene-lab": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/",
+            "scene-isaac": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/isaac/"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "var:comb-sort-objects", "@type": "bdd:Combination",
+            "repetition": "false",
+            "length": 3, "from": [ "lab:obj-bottle", "lab:obj-mug", "lab:obj-box", "lab:obj-ball" ]
+        },
+        {
+            "@id": "var:comb-sort-workspaces", "@type": "bdd:Permutation",
+            "length": 2, "from": [ "lab:ws-bin1", "lab:ws-bin2" ]
+        },
+        {
+            "@id": "var:var-product", "@type": [ "bdd:TaskVariation", "bdd:CartesianProductVariation" ],
+            "of-task": "tmpl:task-pickplace",
+            "variable-list": [ "tmpl:var-sort-objects", "tmpl:var-pick-ws", "tmpl:var-sort-workspaces" ],
+            "of-sets": [
+                "var:comb-sort-objects",
+                "var:comb-sort-workspaces",
+                [ "lab:ws-table", "lab:ws-shelf" ]
+            ]
+        },
+        {
+            "@id": "var:scr-var-panda-sorting", "@type": "bdd:ScenarioVariant",
+            "of-template": "tmpl:tmpl-sorting",
+            "has-scene": [
+                "scene-lab:scn-sorting-secorolab-objects",
+                "scene-lab:scn-sorting-secorolab-workspaces",
+                "scene-isaac:scn-pickplace-isaac-panda"
+            ],
+            "has-variation": "var:var-product"
+        },
+        {
+            "@id": "var:us-sorting", "@type": "bdd:UserStory",
+            "has-criteria": [
+                "var:scr-var-panda-sorting"
+            ]
+        }
+    ]
+}
