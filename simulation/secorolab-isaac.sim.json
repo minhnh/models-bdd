@@ -12,49 +12,49 @@
     "@graph": [
         {
             "@id": "lab-sim:isaac-franka", "@type": [ "agn:AgentModel", "py:ModuleAttribute", "py:Class" ],
-            "py:module-name": "omni.isaac.franka", "py:attribute-name": " Franka"
+            "module-name": "omni.isaac.franka", "attribute-name": "Franka"
         },
         {
             "@id": "lab-sim:obj-ycb-cracker-box",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/003_cracker_box.usd"
+            "path": "/Isaac/Props/YCB/Axis_Aligned_Physics/003_cracker_box.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-sugar-box",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/004_sugar_box.usd"
+            "path": "/Isaac/Props/YCB/Axis_Aligned_Physics/004_sugar_box.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-tomato-soup-can",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/005_tomato_soup_can.usd"
+            "path": "/Isaac/Props/YCB/Axis_Aligned_Physics/005_tomato_soup_can.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-mustard-bottle",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "sim:path": "/Isaac/Props/YCB/Axis_Aligned_Physics/006_mustard_bottle.usd"
+            "path": "/Isaac/Props/YCB/Axis_Aligned_Physics/006_mustard_bottle.usd"
         },
         {
             "@id": "lab-sim:obj-thorlabs-table",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "sim:path": "/Isaac/Props/Mounts/ThorlabsTable/table_instanceable.usd"
+            "path": "/Isaac/Props/Mounts/ThorlabsTable/table_instanceable.usd"
         },
         {
             "@id": "lab-sim:obj-ycb-mug",
             "@type": [ "env:ObjectModel", "sim:SystemResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "sim:path": "/home/minh/ws/isaacsim/ycb/025_mug-physics.usd"
+            "path": "/home/minh/ws/isaacsim/ycb/025_mug-physics.usd"
         },
         {
             "@id": "lab-sim:isaac-cuboid", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],
-            "py:module-name": "omni.isaac.core.objects", "py:attribute-name": "DynamicCuboid"
+            "module-name": "omni.isaac.core.objects", "attribute-name": "DynamicCuboid"
         },
         {
             "@id": "lab-sim:isaac-cylinder", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],
-            "py:module-name": "omni.isaac.core.objects", "py:attribute-name": "DynamicCylinder"
+            "module-name": "omni.isaac.core.objects", "attribute-name": "DynamicCylinder"
         },
         {
             "@id": "lab-sim:isaac-sphere", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],
-            "py:module-name": "omni.isaac.core.objects", "py:attribute-name": "DynamicSphere"
+            "module-name": "omni.isaac.core.objects", "attribute-name": "DynamicSphere"
         }
     ]
 }

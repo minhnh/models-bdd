@@ -42,10 +42,6 @@
             "of-object": "lab:obj-bottle", "has-obj-model": "lab-sim:obj-ycb-mustard-bottle"
         },
         {
-            "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
-            "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table"
-        },
-        {
             "@id": "exec:obj-ball-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
