@@ -17,16 +17,16 @@
         { "@id": "tmpl:evt-place-end", "@type": "time:Event" },
         { "@id": "tmpl:evt-sort-end", "@type": "time:Event" },
 
-        { "@id": "tmpl:pickplace-given", "@type": "bdd:Given" },
-        { "@id": "tmpl:pickplace-when", "@type": "bdd:When" },
-        { "@id": "tmpl:pickplace-then", "@type": "bdd:Then" },
+        { "@id": "tmpl:sorting-given", "@type": "bdd:Given" },
+        { "@id": "tmpl:sorting-when", "@type": "bdd:When" },
+        { "@id": "tmpl:sorting-then", "@type": "bdd:Then" },
         {
-            "@id": "tmpl:scenario-pickplace", "@type": "bdd:Scenario",
+            "@id": "tmpl:scenario-sorting", "@type": "bdd:Scenario",
             "of-behaviour": "tmpl:bhv-pickplace",
             "of-task": "tmpl:task-pickplace",
-            "given": "tmpl:pickplace-given",
-            "when": "tmpl:pickplace-when",
-            "then": "tmpl:pickplace-then"
+            "given": "tmpl:sorting-given",
+            "when": "tmpl:sorting-when",
+            "then": "tmpl:sorting-then"
         },
 
         { "@id": "tmpl:var-pick-ws", "@type": "bdd:ScenarioVariable" },
@@ -61,7 +61,7 @@
 
         {
            "@id": "tmpl:flc-located-at-pick-ws", "@type": "bdd:FluentClause",
-           "clause-of": "tmpl:pickplace-given",
+           "clause-of": "tmpl:sorting-given",
            "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-before-pick",
            "ref-object": "tmpl:var-forall-obj",
@@ -78,7 +78,7 @@
 
         {
            "@id": "tmpl:flc-located-at-place-ws", "@type": "bdd:FluentClause",
-           "clause-of": "tmpl:pickplace-then",
+           "clause-of": "tmpl:sorting-then",
            "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-after-place",
            "ref-object": "tmpl:var-forall-obj",
@@ -87,7 +87,7 @@
 
         {
            "@id": "tmpl:flc-located-at-sorted", "@type": "bdd:FluentClause",
-           "clause-of": "tmpl:pickplace-then",
+           "clause-of": "tmpl:sorting-then",
            "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-after-sort",
            "ref-object": "tmpl:var-sort-objects",
@@ -96,7 +96,7 @@
 
         {
             "@id": "tmpl:tmpl-sorting", "@type": "bdd:ScenarioTemplate",
-            "of-scenario": "tmpl:scenario-pickplace",
+            "of-scenario": "tmpl:scenario-sorting",
             "has-scene": "scene:scn-sorting",
             "has-clause": [
                 "tmpl:forall-sort-objects", "tmpl:flc-located-at-sorted"
