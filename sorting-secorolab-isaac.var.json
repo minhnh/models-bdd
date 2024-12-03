@@ -22,7 +22,7 @@
         },
         {
             "@id": "var:var-product", "@type": [ "bdd:TaskVariation", "bdd:CartesianProductVariation" ],
-            "of-task": "tmpl:task-pickplace",
+            "of-task": "tmpl:task-sorting",
             "variable-list": [ "tmpl:var-sort-objects", "tmpl:var-pick-ws", "tmpl:var-sort-workspaces" ],
             "of-sets": [
                 "var:comb-sort-objects",

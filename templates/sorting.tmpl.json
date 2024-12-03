@@ -10,8 +10,8 @@
         }
     ],
     "@graph": [
-        { "@id": "tmpl:bhv-pickplace", "@type": "bhv:Behaviour" },
-        { "@id": "tmpl:task-pickplace", "@type": "task:Task" },
+        { "@id": "tmpl:bhv-pickplace", "@type": ["bhv:Behaviour", "bhv:PickPlace"] },
+        { "@id": "tmpl:task-sorting", "@type": "task:Task" },
 
         { "@id": "tmpl:evt-pick-start", "@type": "time:Event" },
         { "@id": "tmpl:evt-place-end", "@type": "time:Event" },
@@ -23,7 +23,7 @@
         {
             "@id": "tmpl:scenario-sorting", "@type": "bdd:Scenario",
             "of-behaviour": "tmpl:bhv-pickplace",
-            "of-task": "tmpl:task-pickplace",
+            "of-task": "tmpl:task-sorting",
             "given": "tmpl:sorting-given",
             "when": "tmpl:sorting-when",
             "then": "tmpl:sorting-then"
@@ -54,8 +54,9 @@
         {
             "@id": "tmpl:forall-sort-objects", "@type": "bdd:ForAll",
             "variable": "var-forall-obj", "in-set": "tmpl:var-sort-objects",
+            "clause-of": "tmpl:sorting-when",
             "has-clause": [
-                "tmpl:flc-located-at-pick-ws", "tmpl:exists-place-ws"
+                "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace", "tmpl:exists-place-ws"
             ]
         },
 
@@ -69,8 +70,18 @@
         },
 
         {
+            "@id": "tmpl:when-pickplace", "@type": "bdd:WhenBehaviour",
+            "of-behaviour": "tmpl:bhv-pickplace",
+            "clause-of": "tmpl:sorting-when",
+            "target-obj": "tmpl:var-forall-obj",
+            "pick-ws": "tmpl:var-pick-ws",
+            "place-ws": "tmpl:var-exists-ws"
+        },
+
+        {
             "@id": "tmpl:exists-place-ws", "@type": "bdd:ThereExists",
             "variable": "var-exists-ws", "in-set": "tmpl:var-sort-workspaces",
+            "clause-of": "tmpl:sorting-then",
             "has-clause": [
                 "tmpl:flc-located-at-place-ws"
             ]
