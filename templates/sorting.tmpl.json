@@ -74,6 +74,7 @@
             "of-behaviour": "tmpl:bhv-pickplace",
             "clause-of": "tmpl:sorting-when",
             "target-obj": "tmpl:var-forall-obj",
+            "target-agn": "tmpl:var-agent",
             "pick-ws": "tmpl:var-pick-ws",
             "place-ws": "tmpl:var-exists-ws"
         },

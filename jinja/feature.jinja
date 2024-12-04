@@ -25,23 +25,10 @@ Feature: {{ data.name }}
     Given specified objects, workspaces and agents are available
 {%- endif %}
 
-{% for scenario_data in data.criteria %}
-  Scenario Outline: {{ scenario_data.name }}
-    {% for clause in scenario_data.given_clauses %}
+{%- for scenario_data in data.criteria %}
+{% for var_data in scenario_data.variations %}
+  Scenario: {{ var_data.name }}
+    {% for clause in var_data.clauses%}
     {{ clause|safe }}{% endfor %}
-
-    {%- if 'when_event' in scenario_data %}
-    When "{{ scenario_data.when_event }}"
-    {%- endif %}
-
-    When behaviour "{{ scenario_data.behaviour }}" occurs
-
-    {% for clause in scenario_data.then_clauses %}
-    {{ clause|safe }}{% endfor %}
-
-    Examples:
-    |{% for var_name in scenario_data.variables %} {{ var_name }} | {%- endfor %}
-    {% for var_data in scenario_data.variations -%}
-      |{% for entity_name in var_data %} {{ entity_name|safe }} |{% endfor %}
-    {% endfor %}
+{% endfor %}
 {%- endfor -%}
