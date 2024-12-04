@@ -109,7 +109,7 @@
         {
             "@id": "tmpl:tmpl-sorting", "@type": "bdd:ScenarioTemplate",
             "of-scenario": "tmpl:scenario-sorting",
-            "has-scene": "scene:scn-sorting",
+            "has-scene": "scene:scn-pickplace",
             "has-clause": [
                 "tmpl:forall-sort-objects", "tmpl:flc-located-at-sorted"
            ]

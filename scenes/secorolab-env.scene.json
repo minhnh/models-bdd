@@ -8,10 +8,11 @@
         }
     ],
     "@graph": [
-        { "@id": "scene:scn-sorting", "@type": "bdd:Scene" },
+        { "@id": "scene:scn-pickplace", "@type": "bdd:Scene" },
+
         {
             "@id": "scene:scn-sorting-secorolab-objects", "@type": "bdd:SceneHasObjects",
-            "of-scene": "scene:scn-sorting",
+            "of-scene": "scene:scn-pickplace",
             "has-object": [
                "lab:obj-box", "lab:obj-bottle", "lab:obj-ball", "lab:obj-mug",
                "lab:obj-table", "lab:obj-bin1", "lab:obj-bin2"
@@ -19,13 +20,12 @@
         },
         {
             "@id": "scene:scn-sorting-secorolab-workspaces", "@type": "bdd:SceneHasWorkspaces",
-            "of-scene": "scene:scn-sorting",
+            "of-scene": "scene:scn-pickplace",
             "has-workspace": [
                "lab:ws-table", "lab:ws-bin1", "lab:ws-bin2"
             ]
         },
 
-        { "@id": "scene:scn-pickplace", "@type": "bdd:Scene" },
         {
             "@id": "scene:scn-pickplace-secorolab-objects", "@type": "bdd:SceneHasObjects",
             "of-scene": "scene:scn-pickplace",

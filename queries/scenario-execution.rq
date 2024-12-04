@@ -7,17 +7,15 @@ CONSTRUCT {
         bdd:of-variant ?scenarioVar ;
         bdd:of-template ?scenarioTmpl ;
         bdd:has-behaviour-impl ?bhvImpl .
-#        bdd:has-fluent-impl ?fluentImpl .
     ?bhvImpl a ?bhvImplType ;
         bhv:of-behaviour ?behaviour .
-#    ?fluentImpl a ?fluentImplType .
+    ?behaviour a ?bhvType .
 }
 WHERE {
     ?scenarioExec a bdd:ScenarioExecution ;
         a ?execType ;
         bdd:of-variant ?scenarioVar ;
         bdd:has-behaviour-impl ?bhvImpl .
-#        bdd:has-fluent-impl ?fluentImpl .
 
     ?scenarioVar a bdd:ScenarioVariant ;
         bdd:of-template ?scenarioTmpl .
@@ -25,8 +23,12 @@ WHERE {
     ?scenarioTmpl a bdd:ScenarioTemplate ;
         bdd:of-scenario / bhv:of-behaviour ?behaviour .
 
-    ?bhvImpl a ?bhvImplType ;
+    ?bhvImpl
+        a bdd:BehaviourImplementation ;
+        a ?bhvImplType ;
         bhv:of-behaviour ?behaviour .
 
-#    ?fluentImpl a ?fluentImplType .
+    ?behaviour
+        a bhv:Behaviour ;
+        a ?bhvType .
 }

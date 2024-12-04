@@ -27,7 +27,7 @@
             "variable-list": [ "tmpl:var-sort-objects", "tmpl:var-pick-ws", "tmpl:var-sort-workspaces", "tmpl:var-agent" ],
             "of-sets": [
                 "var:comb-sort-objects",
-                [ "lab:ws-table", "lab:ws-shelf" ],
+                [ "lab:ws-table" ],
                 "var:comb-sort-workspaces",
                 [ "isaac-agn:panda" ]
             ]

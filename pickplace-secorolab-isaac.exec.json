@@ -62,8 +62,15 @@
             "py:module-name": "bdd_dsl.execution.mockup", "py:attribute-name": "PickplaceBehaviourMockup"
         },
         {
-            "@id": "exec:pickplace-exec", "@type": [ "ScenarioExecution", "SimulatedExecution" ],
-            "of-variant": "var:scr-var-panda-pickplace",
+            "@id": "exec:pickplace-bhv-isaac", "@type": [ "bdd:BehaviourImplementation", "py:ModuleAttribute" ],
+            "of-behaviour": "tmpl:bhv-pickplace",
+            "py:module-name": "bdd_isaacsim_exec.execution", "py:attribute-name": "IsaacsimBehaviour"
+        },
+        {
+            "@id": "exec:pickplace-exec", "@type": [ "bdd:ScenarioExecution", "bdd:SimulatedExecution" ],
+            "of-variant": [
+                "var:scr-var-panda-pickplace", "var:scr-var-panda-sorting"
+            ],
             "has-behaviour-impl": "exec:pickplace-bhv-mockup"
         }
     ]
