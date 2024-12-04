@@ -81,7 +81,7 @@
 
         {
             "@id": "tmpl:exists-place-ws", "@type": "bdd:ThereExists",
-            "variable": "var-exists-ws", "in-set": "tmpl:var-sort-workspaces",
+            "variable": "tmpl:var-exists-ws", "in-set": "tmpl:var-sort-workspaces",
             "clause-of": "tmpl:sorting-then",
             "has-clause": [
                 "tmpl:flc-located-at-place-ws"
