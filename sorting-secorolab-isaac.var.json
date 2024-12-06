@@ -15,7 +15,9 @@
         {
             "@id": "var:comb-sort-objects", "@type": "bdd:Combination",
             "repetition": "false",
-            "length": 3, "from": [ "lab:obj-bottle", "lab:obj-mug", "lab:obj-box", "lab:obj-ball" ]
+            "length": 3, "from": [
+                "lab:obj-cube1", "lab:obj-cube3", "lab:obj-ball1", "lab:obj-ball3"
+            ]
         },
         {
             "@id": "var:comb-sort-workspaces", "@type": "bdd:Permutation",

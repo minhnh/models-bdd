@@ -36,8 +36,8 @@
         },
         {
             "@id": "lab-sim:obj-ycb-mug",
-            "@type": [ "env:ObjectModel", "sim:SystemResource", "sim:ResourceWithPath", "usd:UsdFile" ],
-            "path": "/home/minh/ws/isaacsim/ycb/025_mug-physics.usd"
+            "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
+            "path": "/Isaac/Props/Mugs/SM_Mug_A2.usd"
         },
         {
             "@id": "lab-sim:obj-klt-bin",

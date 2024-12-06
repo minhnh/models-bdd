@@ -14,7 +14,9 @@
         {
             "@id": "var:comb-objects", "@type": "bdd:Combination",
             "repetition": "false",
-            "length": 1, "from": [ "lab:obj-bottle", "lab:obj-ball" ]
+            "length": 2, "from": [
+                "lab:obj-bottle", "lab:obj-mug", "lab:obj-box", "lab:obj-ball1"
+            ]
         },
         {
             "@id": "var:comb-workspaces", "@type": "bdd:Combination",
@@ -27,9 +29,9 @@
             "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
             "rows": [
                 [ "lab:obj-bottle", "lab:ws-table", "lab:ws-shelf" ],
-                [ "lab:obj-ball", "lab:ws-table", "lab:ws-shelf" ],
+                [ "lab:obj-ball1", "lab:ws-table", "lab:ws-shelf" ],
                 [ "lab:obj-bottle", "lab:ws-shelf", "lab:ws-table" ],
-                [ "lab:obj-ball", "lab:ws-table", "lab:ws-table" ]
+                [ "lab:obj-ball1", "lab:ws-table", "lab:ws-table" ]
             ]
         },
         {
@@ -37,7 +39,7 @@
             "of-task": "tmpl:task-pickplace",
             "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
             "of-sets": [
-                [ "lab:obj-bottle", "lab:obj-ball" ],
+                "var:comb-objects",
                 "var:comb-workspaces",
                 [ "lab:ws-table", "lab:ws-shelf" ]
             ]
