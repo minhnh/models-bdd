@@ -10,7 +10,7 @@
         }
     ],
     "@graph": [
-        { "@id": "tmpl:bhv-pickplace", "@type": ["bhv:Behaviour", "bhv:PickPlace"] },
+        { "@id": "tmpl:bhv-pickplace", "@type": ["bhv:Behaviour", "bhv:Pick", "bhv:Place"] },
         { "@id": "tmpl:task-sorting", "@type": "task:Task" },
 
         { "@id": "tmpl:evt-pick-start", "@type": "time:Event" },
@@ -75,8 +75,7 @@
             "clause-of": "tmpl:sorting-when",
             "target-obj": "tmpl:var-forall-obj",
             "target-agn": "tmpl:var-agent",
-            "pick-ws": "tmpl:var-pick-ws",
-            "place-ws": "tmpl:var-exists-ws"
+            "target-ws": "tmpl:var-exists-ws"
         },
 
         {
