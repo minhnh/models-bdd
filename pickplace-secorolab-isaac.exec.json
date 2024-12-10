@@ -28,7 +28,7 @@
             "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table",
             "has-config": {
-                "position": [0.0, 0.0, 0.8], "scale": [1.0, 1.5, 1.0]
+                "position": [0.0, 0.0, 0.8], "scale": [1.0, 2.0, 1.0]
             }
         },
         {
@@ -42,91 +42,75 @@
             "@id": "exec:obj-bin1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-bin1", "has-obj-model": "lab-sim:obj-klt-bin",
             "has-config": {
-                "position": [0.3, 0.4, 0.85]
+                "position": [0.5, 0.5, 0.85]
             }
         },
         {
             "@id": "exec:obj-bin2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-bin2", "has-obj-model": "lab-sim:obj-klt-bin",
             "has-config": {
-                "position": [0.3, -0.4, 0.85]
+                "position": [0.5, -0.5, 0.85]
             }
         },
         {
             "@id": "exec:obj-box-sim", "@type": "env:ModelledObject",
-            "of-object": "lab:obj-box", "has-obj-model": "lab-sim:obj-ycb-sugar-box",
-            "has-config": {
-                "position": [0.3, 0.1, 0.85]
-            }
+            "of-object": "lab:obj-box", "has-obj-model": "lab-sim:obj-ycb-sugar-box"
         },
         {
             "@id": "exec:obj-mug-sim", "@type": "env:ModelledObject",
-            "of-object": "lab:obj-mug", "has-obj-model": "lab-sim:obj-ycb-mug",
-            "has-config": {
-                "position": [0.35, 0.1, 0.85]
-            }
+            "of-object": "lab:obj-mug", "has-obj-model": "lab-sim:obj-ycb-mug"
         },
         {
             "@id": "exec:obj-bottle-sim", "@type": "env:ModelledObject",
-            "of-object": "lab:obj-bottle", "has-obj-model": "lab-sim:obj-ycb-mustard-bottle",
-            "has-config": {
-                "position": [0.2, -0.1, 0.85]
-            }
+            "of-object": "lab:obj-bottle", "has-obj-model": "lab-sim:obj-ycb-mustard-bottle"
         },
         {
             "@id": "exec:obj-cube1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube1", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 0, 1],
-                "position": [0.25, -0.2, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 0, 1]
             }
         },
         {
             "@id": "exec:obj-cube2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube2", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 0, 1],
-                "position": [0.2, 0.0, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 0, 1]
             }
         },
         {
             "@id": "exec:obj-cube3-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube3", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 1, 0],
-                "position": [0.36, -0.1, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 1, 0]
             }
         },
         {
             "@id": "exec:obj-cube4-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube4", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 1, 0],
-                "position": [0.32, 0.12, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 1, 0]
             }
         },
         {
             "@id": "exec:obj-ball1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball1", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1],
-                "position": [0.4, 0.0, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1]
             }
         },
         {
             "@id": "exec:obj-ball2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball2", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1],
-                "position": [0.4, 0.0, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1]
             }
         },
         {
             "@id": "exec:obj-ball3-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball3", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 1, 0],
-                "position": [0.4, 0.0, 0.85]
+                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 1, 0]
             }
         },
         {
@@ -137,7 +121,7 @@
         {
             "@id": "exec:pickplace-bhv-isaac", "@type": [ "bdd:BehaviourImplementation", "py:ModuleAttribute" ],
             "of-behaviour": "tmpl:bhv-pickplace",
-            "py:module-name": "bdd_isaacsim_exec.execution", "py:attribute-name": "IsaacsimBehaviour"
+            "py:module-name": "bdd_isaacsim_exec.execution", "py:attribute-name": "IsaacsimPickPlaceBehaviour"
         },
         {
             "@id": "exec:pickplace-exec", "@type": [ "bdd:ScenarioExecution", "bdd:SimulatedExecution" ],
