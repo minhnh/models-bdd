@@ -21,35 +21,35 @@
             "@id": "exec:agn-panda-sim", "@type": "agn:ModelledAgent",
             "of-agent": "isaac-agn:panda", "has-agn-model": "lab-sim:isaac-franka",
             "has-config": {
-                "position": [0.0, 0.0, 0.8]
+                "position": [0.0, 0.0, 0.15]
             }
         },
         {
             "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table",
             "has-config": {
-                "position": [0.0, 0.0, 0.8], "scale": [1.0, 2.0, 1.0]
+                "position": [0.0, 0.0, 0.05], "scale": [1.0, 2.0, 0.2]
             }
         },
         {
             "@id": "exec:obj-shelf-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-shelf", "has-obj-model": "lab-sim:obj-thorlabs-table",
             "has-config": {
-                "position": [1.0, 1.0, 0.8], "scale": [1.0, 1.5, 1.0]
+                "position": [1.0, 1.0, 0.05], "scale": [1.0, 1.5, 1.0]
             }
         },
         {
             "@id": "exec:obj-bin1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-bin1", "has-obj-model": "lab-sim:obj-klt-bin",
             "has-config": {
-                "position": [0.5, 0.5, 0.85]
+                "position": [0.0, 0.6, 0.25]
             }
         },
         {
             "@id": "exec:obj-bin2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-bin2", "has-obj-model": "lab-sim:obj-klt-bin",
             "has-config": {
-                "position": [0.5, -0.5, 0.85]
+                "position": [0.0, -0.6, 0.25]
             }
         },
         {
@@ -68,49 +68,49 @@
             "@id": "exec:obj-cube1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube1", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 0, 1]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [0, 0, 1]
             }
         },
         {
             "@id": "exec:obj-cube2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube2", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 0, 1]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [0, 0, 1]
             }
         },
         {
             "@id": "exec:obj-cube3-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube3", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 1, 0]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [0, 1, 0]
             }
         },
         {
             "@id": "exec:obj-cube4-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-cube4", "has-obj-model": "lab-sim:isaac-cuboid",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "color": [1, 1, 0]
+                "scale": [0.0315, 0.0315, 0.0315], "color": [0, 1, 0]
             }
         },
         {
             "@id": "exec:obj-ball1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball1", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1]
+                "radius": 0.03, "color": [0, 0, 1]
             }
         },
         {
             "@id": "exec:obj-ball2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball2", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 0, 1]
+                "radius": 0.03, "color": [0, 0, 1]
             }
         },
         {
             "@id": "exec:obj-ball3-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-ball3", "has-obj-model": "lab-sim:isaac-sphere",
             "has-config": {
-                "scale": [0.0315, 0.0315, 0.0315], "radius": 1.0, "color": [1, 1, 0]
+                "radius": 0.03, "color": [0, 1, 0]
             }
         },
         {
@@ -128,7 +128,7 @@
             "of-variant": [
                 "var:scr-var-panda-pickplace", "var:scr-var-panda-sorting"
             ],
-            "has-behaviour-impl": "exec:pickplace-bhv-mockup"
+            "has-behaviour-impl": "exec:pickplace-bhv-isaac"
         }
     ]
 }

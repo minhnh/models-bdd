@@ -16,7 +16,7 @@
             "@id": "var:comb-sort-objects", "@type": "bdd:Combination",
             "repetition": "false",
             "length": 3, "from": [
-                "lab:obj-cube1", "lab:obj-cube3", "lab:obj-ball1", "lab:obj-ball3"
+                "lab:obj-cube1", "lab:obj-cube2", "lab:obj-cube3", "lab:obj-ball1", "lab:obj-ball2"
             ]
         },
         {
