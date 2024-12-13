@@ -14,7 +14,7 @@
             "@id": "scene:scn-sorting-secorolab-objects", "@type": "bdd:SceneHasObjects",
             "of-scene": "scene:scn-pickplace",
             "has-object": [
-                "lab:obj-ball1", "lab:obj-ball2", "lab:obj-ball3",
+                "lab:obj-ball1", "lab:obj-ball2", "lab:obj-ball3", "lab:obj-bottle",
                 "lab:obj-cube1", "lab:obj-cube2", "lab:obj-cube3", "lab:obj-cube4"
             ]
         },
