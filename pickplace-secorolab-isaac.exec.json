@@ -25,6 +25,13 @@
             }
         },
         {
+            "@id": "exec:agn-ur10-sim", "@type": "agn:ModelledAgent",
+            "of-agent": "isaac-agn:ur10", "has-agn-model": "lab-sim:isaac-ur10",
+            "has-config": {
+                "position": [0.0, 0.0, 0.2], "attach_gripper": "true"
+            }
+        },
+        {
             "@id": "exec:obj-table-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-table", "has-obj-model": "lab-sim:obj-thorlabs-table",
             "has-config": {

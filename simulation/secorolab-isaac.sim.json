@@ -15,6 +15,10 @@
             "module-name": "omni.isaac.franka", "attribute-name": "Franka"
         },
         {
+            "@id": "lab-sim:isaac-ur10", "@type": [ "agn:AgentModel", "py:ModuleAttribute", "py:Class" ],
+            "module-name": "omni.isaac.universal_robots", "attribute-name": "UR10"
+        },
+        {
             "@id": "lab-sim:obj-ycb-cracker-box",
             "@type": [ "env:ObjectModel", "isaacsim:IsaacResource", "sim:ResourceWithPath", "usd:UsdFile" ],
             "path": "/Isaac/Props/YCB/Axis_Aligned_Physics/003_cracker_box.usd"
