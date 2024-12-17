@@ -67,9 +67,8 @@
         },
 
         {
-           "@id": "tmpl:flc-located-at-pick-ws", "@type": "bdd:FluentClause",
+           "@id": "tmpl:flc-located-at-pick-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
            "clause-of": "tmpl:sorting-given",
-           "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-before-pick",
            "ref-object": "tmpl:var-forall-obj",
            "ref-workspace": "tmpl:var-pick-ws"
@@ -94,26 +93,23 @@
         },
 
         {
-           "@id": "tmpl:flc-located-at-place-ws", "@type": "bdd:FluentClause",
+           "@id": "tmpl:flc-located-at-place-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
            "clause-of": "tmpl:sorting-then",
-           "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-after-place",
            "ref-object": "tmpl:var-forall-obj",
            "ref-workspace": "tmpl:var-exists-ws"
         },
 
         {
-           "@id": "tmpl:flc-move-safely", "@type": "bdd:FluentClause",
+           "@id": "tmpl:flc-move-safely", "@type": ["bdd:FluentClause", "bdd:MoveSafelyPredicate"],
            "clause-of": "tmpl:sorting-then",
-           "holds": "tmpl:fl-move-safely",
            "holds-at": "tmpl:ftc-during-pickplace",
            "ref-agent": "tmpl:var-agent"
         },
 
         {
-           "@id": "tmpl:flc-located-at-sorted", "@type": "bdd:FluentClause",
+           "@id": "tmpl:flc-sorted", "@type": ["bdd:FluentClause", "bdd:SortedIntoPredicate"],
            "clause-of": "tmpl:sorting-then",
-           "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-after-sort",
            "ref-object": "tmpl:var-sort-objects",
            "ref-workspace": "tmpl:var-sort-workspaces"
@@ -124,7 +120,7 @@
             "of-scenario": "tmpl:scenario-sorting",
             "has-scene": "scene:scn-pickplace",
             "has-clause": [
-                "tmpl:forall-sort-objects", "tmpl:flc-located-at-sorted"
+                "tmpl:forall-sort-objects", "tmpl:flc-sorted"
            ]
         }
     ]

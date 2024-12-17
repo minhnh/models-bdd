@@ -34,10 +34,6 @@
         { "@id": "tmpl:var-agent", "@type": "bdd:ScenarioVariable" },
 
         {
-          "@id": "tmpl:fl-located-at", "@type": ["bdd:Fluent", "bdd:LocatedAtPredicate"]
-        },
-
-        {
            "@id": "tmpl:ftc-before-pick", "@type": ["time:TimeConstraint", "time:BeforeEventConstraint"],
            "before-event": "tmpl:evt-pick-start"
         },
@@ -47,17 +43,15 @@
         },
 
         {
-           "@id": "tmpl:flc-located-at-pick-ws", "@type": "bdd:FluentClause",
+           "@id": "tmpl:flc-located-at-pick-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
            "clause-of": "tmpl:pickplace-given",
-           "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-before-pick",
            "ref-object": "tmpl:var-target-obj",
            "ref-workspace": "tmpl:var-pick-ws"
         },
         {
-           "@id": "tmpl:flc-located-at-place-ws", "@type": "bdd:FluentClause",
+           "@id": "tmpl:flc-located-at-place-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
            "clause-of": "tmpl:pickplace-then",
-           "holds": "tmpl:fl-located-at",
            "holds-at": "tmpl:ftc-after-place",
            "ref-object": "tmpl:var-target-obj",
            "ref-workspace": "tmpl:var-place-ws"
