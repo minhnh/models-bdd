@@ -32,8 +32,7 @@ CONSTRUCT {
         bdd:holds ?fluent ;
         bdd:holds-at ?timeConstraint  .
     ?fluent a ?fluentType .
-    ?timeConstraint a ?tcType ;
-        time:ref-event ?tcEvent .
+    ?timeConstraint a ?tcType .
 }
 WHERE {
     ?us a bdd:UserStory ;
@@ -91,9 +90,6 @@ WHERE {
 
     ?timeConstraint a time:TimeConstraint ;
         a ?tcType .
-    OPTIONAL {
-        ?timeConstraint time:ref-event ?tcEvent
-    }
 
     ?scenario a bdd:Scenario ;
         bhv:of-behaviour ?behaviour ;

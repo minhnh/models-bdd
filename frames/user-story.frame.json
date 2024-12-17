@@ -33,7 +33,6 @@
         "var_ws": "mm_bdd:ref-workspace",
         "var_agn": "mm_bdd:ref-agent",
 
-        "event": "mm_time:ref-event",
         "objects": "mm_env:has-object",
         "workspaces": "mm_env:has-workspace",
         "agents": "mm_agn:has-agent"

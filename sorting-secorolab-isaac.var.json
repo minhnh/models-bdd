@@ -26,7 +26,9 @@
         {
             "@id": "var:var-product", "@type": [ "bdd:TaskVariation", "bdd:CartesianProductVariation" ],
             "of-task": "tmpl:task-sorting",
-            "variable-list": [ "tmpl:var-sort-objects", "tmpl:var-pick-ws", "tmpl:var-sort-workspaces", "tmpl:var-agent" ],
+            "variable-list": [
+                "tmpl:var-sort-objects", "tmpl:var-pick-ws", "tmpl:var-sort-workspaces", "tmpl:var-agent"
+            ],
             "of-sets": [
                 "var:comb-sort-objects",
                 [ "lab:ws-table" ],

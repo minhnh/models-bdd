@@ -8,8 +8,6 @@
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/agent.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/simulation.json",
         {
-            "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
-            "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
             "lab": "https://secorolab.github.io/models/environments/secorolab/",
             "lab-sim": "https://secorolab.github.io/models/simulation/isaac/",
             "isaac-agn": "https://secorolab.github.io/models/agents/isaac-sim/",
@@ -119,23 +117,6 @@
             "has-config": {
                 "radius": 0.03, "color": [0, 1, 0]
             }
-        },
-        {
-            "@id": "exec:pickplace-bhv-mockup", "@type": [ "bdd:BehaviourImplementation", "py:ModuleAttribute" ],
-            "of-behaviour": "tmpl:bhv-pickplace",
-            "py:module-name": "bdd_dsl.execution.mockup", "py:attribute-name": "PickplaceBehaviourMockup"
-        },
-        {
-            "@id": "exec:pickplace-bhv-isaac", "@type": [ "bdd:BehaviourImplementation", "py:ModuleAttribute" ],
-            "of-behaviour": "tmpl:bhv-pickplace",
-            "py:module-name": "bdd_isaacsim_exec.execution", "py:attribute-name": "IsaacsimPickPlaceBehaviour"
-        },
-        {
-            "@id": "exec:pickplace-exec", "@type": [ "bdd:ScenarioExecution", "bdd:SimulatedExecution" ],
-            "of-variant": [
-                "var:scr-var-panda-pickplace", "var:scr-var-panda-sorting"
-            ],
-            "has-behaviour-impl": "exec:pickplace-bhv-isaac"
         }
     ]
 }

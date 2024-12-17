@@ -6,6 +6,7 @@
             "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
             "lab": "https://secorolab.github.io/models/environments/secorolab/",
+            "isaac-agn": "https://secorolab.github.io/models/agents/isaac-sim/",
             "scene-lab": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/",
             "scene-isaac": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/isaac/"
         }
@@ -37,11 +38,14 @@
         {
             "@id": "var:var-product", "@type": [ "bdd:TaskVariation", "bdd:CartesianProductVariation" ],
             "of-task": "tmpl:task-pickplace",
-            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws" ],
+            "variable-list": [
+                "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws", "tmpl:var-agent"
+            ],
             "of-sets": [
                 "var:comb-objects",
                 "var:comb-workspaces",
-                [ "lab:ws-table", "lab:ws-shelf" ]
+                [ "lab:ws-table", "lab:ws-shelf" ],
+                [ "isaac-agn:panda" ]
             ]
         },
         {
