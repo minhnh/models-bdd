@@ -62,7 +62,7 @@
             "clause-of": "tmpl:sorting-when",
             "has-clause": [
                 "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace",
-                "tmpl:exists-place-ws", "tmpl:flc-move-safely"
+                "tmpl:flc-move-safely", "tmpl:exists-place-ws"
             ]
         },
 
