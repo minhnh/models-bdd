@@ -41,6 +41,10 @@
            "@id": "tmpl:ftc-after-place", "@type": ["time:TimeConstraint", "time:AfterEventConstraint"],
            "after-event": "tmpl:evt-place-end"
         },
+        {
+           "@id": "tmpl:ftc-during-pickplace", "@type": ["time:TimeConstraint", "time:DuringEventsConstraint"],
+           "after-event": "tmpl:evt-pick-start", "before-event": "tmpl:evt-place-end"
+        },
 
         {
            "@id": "tmpl:flc-located-at-pick-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
@@ -49,6 +53,14 @@
            "ref-object": "tmpl:var-target-obj",
            "ref-workspace": "tmpl:var-pick-ws"
         },
+
+        {
+           "@id": "tmpl:flc-move-safely", "@type": ["bdd:FluentClause", "bdd:MoveSafelyPredicate"],
+           "clause-of": "tmpl:pickplace-then",
+           "holds-at": "tmpl:ftc-during-pickplace",
+           "ref-agent": "tmpl:var-agent"
+        },
+
         {
            "@id": "tmpl:flc-located-at-place-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
            "clause-of": "tmpl:pickplace-then",
@@ -66,13 +78,13 @@
             "target-ws": "tmpl:var-place-ws"
         },
 
-
         {
             "@id": "tmpl:tmpl-pickplace", "@type": "bdd:ScenarioTemplate",
             "of-scenario": "tmpl:scenario-pickplace",
             "has-scene": "scene:scn-pickplace",
             "has-clause": [
-                "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace", "tmpl:flc-located-at-place-ws"
+                "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace",
+                "tmpl:flc-move-safely", "tmpl:flc-located-at-place-ws"
            ]
         }
     ]

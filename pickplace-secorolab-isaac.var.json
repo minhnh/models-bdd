@@ -15,14 +15,15 @@
         {
             "@id": "var:comb-objects", "@type": "bdd:Combination",
             "repetition": "false",
-            "length": 2, "from": [
-                "lab:obj-bottle", "lab:obj-mug", "lab:obj-box", "lab:obj-ball1"
+            "length": 1, "from": [
+                "lab:obj-ball1", "lab:obj-ball2", "lab:obj-ball3",
+                "lab:obj-cube1", "lab:obj-cube2", "lab:obj-cube3", "lab:obj-cube4"
             ]
         },
         {
             "@id": "var:comb-workspaces", "@type": "bdd:Combination",
             "repetition": "false",
-            "length": 1, "from": [ "lab:ws-table", "lab:ws-shelf" ]
+            "length": 1, "from": [ "lab:ws-bin1", "lab:ws-bin2" ]
         },
         {
             "@id": "var:var-table", "@type": [ "bdd:TaskVariation", "bdd:TableVariation" ],
@@ -43,8 +44,8 @@
             ],
             "of-sets": [
                 "var:comb-objects",
+                [ "lab:ws-table" ],
                 "var:comb-workspaces",
-                [ "lab:ws-table", "lab:ws-shelf" ],
                 [ "isaac-agn:panda" ]
             ]
         },

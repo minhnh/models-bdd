@@ -36,9 +36,6 @@
         { "@id": "tmpl:var-exists-ws", "@type": "bdd:ScenarioVariable" },
         { "@id": "tmpl:var-agent", "@type": "bdd:ScenarioVariable" },
 
-        { "@id": "tmpl:fl-located-at", "@type": ["bdd:Fluent", "bdd:LocatedAtPredicate"] },
-        { "@id": "tmpl:fl-move-safely", "@type": ["bdd:Fluent", "bdd:MoveSafelyPredicate"] },
-
         {
            "@id": "tmpl:ftc-before-pick", "@type": ["time:TimeConstraint", "time:BeforeEventConstraint"],
            "before-event": "tmpl:evt-pick-start"
