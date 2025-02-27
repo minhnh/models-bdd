@@ -18,7 +18,7 @@
         {
             "@id": "exec:pickplace-exec-isaac", "@type": [ "bdd:ScenarioExecution", "bdd:SimulatedExecution" ],
             "of-variant": [
-                "var:scr-var-panda-pickplace", "var:scr-var-panda-sorting"
+                "var:scr-var-panda-pickplace", "var:scr-var-panda-sorting", "var:scr-var-ur10-pickplace"
             ],
             "has-behaviour-impl": "exec:pickplace-bhv-isaac"
         }

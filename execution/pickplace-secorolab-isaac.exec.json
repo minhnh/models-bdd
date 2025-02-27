@@ -47,14 +47,14 @@
             "@id": "exec:obj-bin1-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-bin1", "has-obj-model": "lab-sim:obj-klt-bin",
             "has-config": {
-                "position": [0.0, 0.6, 0.25]
+                "position": [0.0, 0.6, 0.25], "scale": [1.0, 1.0, 0.9]
             }
         },
         {
             "@id": "exec:obj-bin2-sim", "@type": "env:ModelledObject",
             "of-object": "lab:obj-bin2", "has-obj-model": "lab-sim:obj-klt-bin",
             "has-config": {
-                "position": [0.0, -0.6, 0.25]
+                "position": [0.0, -0.6, 0.25], "scale": [1.0, 1.0, 0.9]
             }
         },
         {
