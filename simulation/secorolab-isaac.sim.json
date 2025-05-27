@@ -12,11 +12,11 @@
     "@graph": [
         {
             "@id": "lab-sim:isaac-franka", "@type": [ "agn:AgentModel", "py:ModuleAttribute", "py:Class" ],
-            "module-name": "omni.isaac.franka", "attribute-name": "Franka"
+            "module-name": "isaacsim.robot.manipulators.examples.franka", "attribute-name": "Franka"
         },
         {
             "@id": "lab-sim:isaac-ur10", "@type": [ "agn:AgentModel", "py:ModuleAttribute", "py:Class" ],
-            "module-name": "omni.isaac.universal_robots", "attribute-name": "UR10"
+            "module-name": "isaacsim.robot.manipulators.examples.universal_robots", "attribute-name": "UR10"
         },
         {
             "@id": "lab-sim:obj-ycb-cracker-box",
@@ -55,15 +55,15 @@
         },
         {
             "@id": "lab-sim:isaac-cuboid", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],
-            "module-name": "omni.isaac.core.objects", "attribute-name": "DynamicCuboid"
+            "module-name": "isaacsim.core.api.objects", "attribute-name": "DynamicCuboid"
         },
         {
             "@id": "lab-sim:isaac-cylinder", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],
-            "module-name": "omni.isaac.core.objects", "attribute-name": "DynamicCylinder"
+            "module-name": "isaacsim.core.api.objects", "attribute-name": "DynamicCylinder"
         },
         {
             "@id": "lab-sim:isaac-sphere", "@type": [ "env:ObjectModel", "py:ModuleAttribute", "py:Class" ],
-            "module-name": "omni.isaac.core.objects", "attribute-name": "DynamicSphere"
+            "module-name": "isaacsim.core.api.objects", "attribute-name": "DynamicSphere"
         }
     ]
 }
