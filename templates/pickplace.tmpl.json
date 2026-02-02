@@ -34,39 +34,29 @@
         { "@id": "tmpl:var-agent", "@type": "bdd:ScenarioVariable" },
 
         {
-           "@id": "tmpl:ftc-before-pick", "@type": ["time:TimeConstraint", "time:BeforeEventConstraint"],
+           "@id": "tmpl:flc-located-at-pick-ws",
+           "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"],
+           "clause-of": "tmpl:pickplace-given",
+           "ref-object": "tmpl:var-target-obj",
+           "ref-workspace": "tmpl:var-pick-ws",
            "before-event": "tmpl:evt-pick-start"
         },
+
         {
-           "@id": "tmpl:ftc-after-place", "@type": ["time:TimeConstraint", "time:AfterEventConstraint"],
-           "after-event": "tmpl:evt-place-end"
-        },
-        {
-           "@id": "tmpl:ftc-during-pickplace", "@type": ["time:TimeConstraint", "time:DuringEventsConstraint"],
+           "@id": "tmpl:flc-move-safely",
+           "@type": ["bdd:FluentClause", "bdd:MoveSafelyPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"],
+           "clause-of": "tmpl:pickplace-then",
+           "ref-agent": "tmpl:var-agent",
            "after-event": "tmpl:evt-pick-start", "before-event": "tmpl:evt-place-end"
         },
 
         {
-           "@id": "tmpl:flc-located-at-pick-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
-           "clause-of": "tmpl:pickplace-given",
-           "holds-at": "tmpl:ftc-before-pick",
-           "ref-object": "tmpl:var-target-obj",
-           "ref-workspace": "tmpl:var-pick-ws"
-        },
-
-        {
-           "@id": "tmpl:flc-move-safely", "@type": ["bdd:FluentClause", "bdd:MoveSafelyPredicate"],
+           "@id": "tmpl:flc-located-at-place-ws",
+           "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate", "time:TimeConstraint", "time:AfterEventConstraint"],
            "clause-of": "tmpl:pickplace-then",
-           "holds-at": "tmpl:ftc-during-pickplace",
-           "ref-agent": "tmpl:var-agent"
-        },
-
-        {
-           "@id": "tmpl:flc-located-at-place-ws", "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate"],
-           "clause-of": "tmpl:pickplace-then",
-           "holds-at": "tmpl:ftc-after-place",
            "ref-object": "tmpl:var-target-obj",
-           "ref-workspace": "tmpl:var-place-ws"
+           "ref-workspace": "tmpl:var-place-ws",
+           "after-event": "tmpl:evt-place-end"
         },
 
         {
