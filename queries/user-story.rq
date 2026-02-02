@@ -29,10 +29,8 @@ CONSTRUCT {
         bdd:ref-object ?taskObject ;
         bdd:ref-workspace ?taskWorkspace ;
         bdd:ref-agent ?taskAgent ;
-        bdd:holds ?fluent ;
-        bdd:holds-at ?timeConstraint  .
+        bdd:holds ?fluent .
     ?fluent a ?fluentType .
-    ?timeConstraint a ?tcType .
 }
 WHERE {
     ?us a bdd:UserStory ;
@@ -76,8 +74,7 @@ WHERE {
     }
 
     ?clause a bdd:FluentClause ;
-        bdd:holds ?fluent ;
-        bdd:holds-at ?timeConstraint .
+        bdd:holds ?fluent .
     {
         { ?clause bdd:ref-object ?taskObject }
         UNION
@@ -87,9 +84,6 @@ WHERE {
     }
 
     ?fluent a ?fluentType .
-
-    ?timeConstraint a time:TimeConstraint ;
-        a ?tcType .
 
     ?scenario a bdd:Scenario ;
         bhv:of-behaviour ?behaviour ;
