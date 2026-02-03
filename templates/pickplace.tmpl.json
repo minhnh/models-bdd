@@ -13,6 +13,8 @@
         { "@id": "tmpl:bhv-pickplace", "@type": ["bhv:Behaviour", "bhv:Pick", "bhv:Place"] },
         { "@id": "tmpl:task-pickplace", "@type": "task:Task" },
 
+        { "@id": "tmpl:evt-scr-start", "@type": "time:Event" },
+        { "@id": "tmpl:evt-scr-end", "@type": "time:Event" },
         { "@id": "tmpl:evt-pick-start", "@type": "time:Event" },
         { "@id": "tmpl:evt-place-end", "@type": "time:Event" },
 
@@ -44,7 +46,9 @@
 
         {
            "@id": "tmpl:flc-move-safely",
-           "@type": ["bdd:FluentClause", "bdd:MoveSafelyPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"],
+           "@type": [
+                "bdd:FluentClause", "bdd:MoveSafelyPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"
+           ],
            "clause-of": "tmpl:pickplace-then",
            "ref-agent": "tmpl:var-agent",
            "after-event": "tmpl:evt-pick-start", "before-event": "tmpl:evt-place-end"
@@ -60,22 +64,26 @@
         },
 
         {
-            "@id": "tmpl:when-pickplace", "@type": "bdd:WhenBehaviour",
+            "@id": "tmpl:when-pickplace",
+            "@type": ["bdd:WhenBehaviour", "time:TimeConstraint", "time:DuringEventsConstraint"],
             "of-behaviour": "tmpl:bhv-pickplace",
             "clause-of": "tmpl:pickplace-when",
             "target-obj": "tmpl:var-target-obj",
             "target-agn": "tmpl:var-agent",
-            "target-ws": "tmpl:var-place-ws"
+            "target-ws": "tmpl:var-place-ws",
+            "after-event": "tmpl:evt-pick-start", "before-event": "tmpl:evt-place-end"
         },
 
         {
-            "@id": "tmpl:tmpl-pickplace", "@type": "bdd:ScenarioTemplate",
+            "@id": "tmpl:tmpl-pickplace",
+            "@type": ["bdd:ScenarioTemplate", "time:TimeConstraint", "time:DuringEventsConstraint" ],
             "of-scenario": "tmpl:scenario-pickplace",
             "has-scene": "scene:scn-pickplace",
             "has-clause": [
                 "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace",
                 "tmpl:flc-move-safely", "tmpl:flc-located-at-place-ws"
-           ]
+            ],
+            "after-event": "tmpl:evt-scr-start", "before-event": "tmpl:evt-scr-end"
         }
     ]
 }
