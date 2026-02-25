@@ -52,6 +52,11 @@
             "@id": "tmpl:flc-located-at-pick-ws", "@type": [ "ObservationPolicy", "ROSTopic" ],
             "message-type": "bdd_ros2_interfaces/TrinaryStamped",
             "topic-name": "/obs_policy/located_at_pick_ws"
+        },
+        {
+            "@id": "tmpl:flc-located-at-place-ws", "@type": [ "ObservationPolicy", "ROSTopic" ],
+            "message-type": "bdd_ros2_interfaces/TrinaryStamped",
+            "topic-name": "/obs_policy/located_at_place_ws"
         }
     ]
 }
