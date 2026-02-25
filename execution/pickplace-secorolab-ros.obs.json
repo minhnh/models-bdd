@@ -1,0 +1,57 @@
+{
+    "@context": [
+        "https://comp-rob2b.github.io/metamodels/geometry/structural-entities.json",
+        "https://comp-rob2b.github.io/metamodels/geometry/coordinates.json",
+        "https://comp-rob2b.github.io/metamodels/geometry/spatial-relations.json",
+        "https://comp-rob2b.github.io/metamodels/qudt.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/observation.json",
+        "https://secorolab.github.io/metamodels/languages/python.json",
+        {
+            "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
+            "obs-ros": "https://secorolab.github.io/models/observation/ros/",
+            "lab-geom": "https://secorolab.github.io/models/environments/secorolab/geometry/"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "obs-ros:target-obj-com",
+            "@type": ["Point", "Euclidean", "3D"]
+        },
+        {
+            "@id": "lab-geom:bin1-origin",
+            "@type": ["Point", "Euclidean", "3D"]
+        },
+        {
+            "@id": "oa-geom:base-link-frame",
+            "@type": [ "Frame", "HasFrameId"],
+            "frame-id": "/base_link"
+        },
+        {
+            "@id": "obs-ros:position-target-obj-bin1",
+            "@type": "Position",
+            "of": "obs-ros:target-obj-com",
+            "with-respect-to": "lab-geom:bin1-origin",
+            "quantity-kind": "Length"
+        },
+        {
+            "@id": "obs-ros:obj-bin1-position",
+            "@type": [
+                "ObservationProvider",
+                "ROSTopic",
+                "PositionReference",
+                "PositionCoordinate",
+                "VectorXYZ"
+            ],
+            "unit": "M",
+            "message-type": "geometry_msgs/msg/PointStamped",
+            "as-seen-by": "oa-geom:base-link-frame",
+            "topic-name": "/obj-bin1-position"
+        },
+        {
+            "@id": "tmpl:flc-located-at-pick-ws", "@type": [ "ObservationPolicy", "ROSTopic" ],
+            "message-type": "bdd_ros2_interfaces/TrinaryStamped",
+            "topic-name": "/obs_policy/located_at_pick_ws"
+        }
+    ]
+}
