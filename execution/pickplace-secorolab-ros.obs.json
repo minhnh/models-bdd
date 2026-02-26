@@ -5,6 +5,7 @@
         "https://comp-rob2b.github.io/metamodels/geometry/spatial-relations.json",
         "https://comp-rob2b.github.io/metamodels/qudt.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/time.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/observation.json",
         "https://secorolab.github.io/metamodels/languages/python.json",
         {
@@ -48,6 +49,8 @@
             "as-seen-by": "oa-geom:base-link-frame",
             "topic-name": "/obj-bin1-position"
         },
+        { "@id": "tmpl:flc-located-at-pick-ws", "horizon-seconds": 0.5 },
+        { "@id": "tmpl:flc-located-at-place-ws", "horizon-seconds": 0.5 },
         {
             "@id": "tmpl:flc-located-at-pick-ws", "@type": [ "ObservationPolicy", "ROSTopic" ],
             "message-type": "bdd_ros2_interfaces/TrinaryStamped",
