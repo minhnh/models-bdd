@@ -16,6 +16,8 @@
         { "@id": "tmpl:evt-scr-start", "@type": "time:Event" },
         { "@id": "tmpl:evt-scr-end", "@type": "time:Event" },
         { "@id": "tmpl:evt-pick-start", "@type": "time:Event" },
+        { "@id": "tmpl:evt-pick-end", "@type": "time:Event" },
+        { "@id": "tmpl:evt-place-start", "@type": "time:Event" },
         { "@id": "tmpl:evt-place-end", "@type": "time:Event" },
 
         { "@id": "tmpl:pickplace-given", "@type": "bdd:Given" },
@@ -45,13 +47,14 @@
         },
 
         {
-           "@id": "tmpl:flc-move-safely",
+           "@id": "tmpl:flc-is-held",
            "@type": [
-                "bdd:FluentClause", "bdd:MoveSafelyPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"
+                "bdd:FluentClause", "bdd:IsHeldPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"
            ],
            "clause-of": "tmpl:pickplace-then",
+           "ref-object": "tmpl:var-target-obj",
            "ref-agent": "tmpl:var-agent",
-           "after-event": "tmpl:evt-pick-start", "before-event": "tmpl:evt-place-end"
+           "after-event": "tmpl:evt-pick-end", "before-event": "tmpl:evt-place-start"
         },
 
         {
@@ -81,7 +84,7 @@
             "has-scene": "scene:scn-pickplace",
             "has-clause": [
                 "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace",
-                "tmpl:flc-move-safely", "tmpl:flc-located-at-place-ws"
+                "tmpl:flc-is-held", "tmpl:flc-located-at-place-ws"
             ],
             "after-event": "tmpl:evt-scr-start", "before-event": "tmpl:evt-scr-end"
         }
