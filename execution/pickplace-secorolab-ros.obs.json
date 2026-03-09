@@ -49,8 +49,8 @@
             "as-seen-by": "oa-geom:base-link-frame",
             "topic-name": "/obj-bin1-position"
         },
-        { "@id": "tmpl:flc-located-at-pick-ws", "horizon-seconds": 1.0 },
-        { "@id": "tmpl:flc-located-at-place-ws", "horizon-seconds": 1.0 },
+        { "@id": "tmpl:flc-located-at-pick-ws", "horizon-seconds": 1.5 },
+        { "@id": "tmpl:flc-located-at-place-ws", "horizon-seconds": 1.5 },
         {
             "@id": "tmpl:flc-located-at-pick-ws", "@type": [ "ObservationPolicy", "ROSTopic" ],
             "message-type": "bdd_ros2_interfaces/TrinaryStamped",
