@@ -1,5 +1,6 @@
 {
     "@context": [
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/time.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/task.json",
@@ -14,6 +15,31 @@
         }
     ],
     "@graph": [
+        { "@id": "var:var-kinova1-speed", "@type": "bdd:ScenarioVariable" },
+        { "@id": "var:var-kinova2-speed", "@type": "bdd:ScenarioVariable" },
+        {
+           "@id": "var:flc-config-kionva1-speed",
+           "@type": [
+                "bdd:FluentClause", "bdd:HasConfigPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
+           ],
+           "clause-of": "tmpl:pickplace-given",
+           "config-target": "isaac-agn:kinova1",
+           "config-name": "speed",
+           "config-var": "var:var-kinova1-speed",
+           "before-event": "tmpl:evt-pick-start", "horizon-seconds": 1.0
+        },
+        {
+           "@id": "var:flc-config-kionva2-speed",
+           "@type": [
+                "bdd:FluentClause", "bdd:HasConfigPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
+           ],
+           "clause-of": "tmpl:pickplace-given",
+           "config-target": "isaac-agn:kinova2",
+           "config-name": "speed",
+           "config-var": "var:var-kinova2-speed",
+           "before-event": "tmpl:evt-pick-start", "horizon-seconds": 1.0
+        },
+
         {
             "@id": "scene-grc:objects", "@type": "bdd:SceneHasObjects",
             "of-scene": "scene-lab:scn-pickplace",
@@ -27,9 +53,21 @@
         {
             "@id": "var:var-table", "@type": [ "bdd:TaskVariation", "bdd:TableVariation" ],
             "of-task": "tmpl:task-pickplace",
-            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws", "tmpl:var-agent" ],
+            "variable-list": [
+                "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws", "tmpl:var-agent",
+                "var:var-kinova1-speed", "var:var-kinova2-speed"
+            ],
             "rows": [
-                [ "env-lab:obj-tray", "lab:ws-table", "lab:ws-table", ["isaac-agn:kinova1", "isaac-agn:kinova2"] ]
+                [
+                    "env-lab:obj-tray", "lab:ws-table", "lab:ws-table",
+                    ["isaac-agn:kinova1", "isaac-agn:kinova2"],
+                    0.5, 0.5
+                ],
+                [
+                    "env-lab:obj-tray", "lab:ws-table", "lab:ws-table",
+                    ["isaac-agn:kinova1", "isaac-agn:kinova2"],
+                    0.5, 0.7
+                ]
             ]
         },
         {
@@ -39,6 +77,10 @@
                 "scene-grc:objects",
                 "scene-grc:workspaces",
                 "scene-isaac:scn-pickplace-isaac-kinovas"
+            ],
+            "has-clause": [
+                "var:flc-config-kionva1-speed",
+                "var:flc-config-kionva2-speed"
             ],
             "has-variation": "var:var-table"
         },
