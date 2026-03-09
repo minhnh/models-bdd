@@ -2,10 +2,13 @@
     "@context": {
         "@base": "https://secorolab.github.io/models/agents/isaac-sim/",
         "agn": "https://secorolab.github.io/metamodels/agent#",
+        "kinova": "https://www.kinovarobotics.com/product/",
         "franka": "https://www.franka.de/",
         "ur": "https://www.universal-robots.com/products/"
     },
     "@graph": [
+        { "@id": "kinova1", "@type": [ "agn:Agent", "franka:gen3-robots" ] },
+        { "@id": "kinova2", "@type": [ "agn:Agent", "franka:gen3-robots" ] },
         { "@id": "panda", "@type": [ "agn:Agent", "franka:emika-panda" ] },
         { "@id": "ur10", "@type": [ "agn:Agent", "ur:ur10-robot" ] }
     ]

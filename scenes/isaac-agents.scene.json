@@ -10,6 +10,11 @@
     ],
     "@graph": [
         {
+            "@id": "scene:scn-pickplace-isaac-kinovas", "@type": "bdd:SceneHasAgents",
+            "of-scene": "scene-lab:scn-pickplace",
+            "has-agent": [ "isaac-agn:kinova1", "isaac-agn:kinova2" ]
+        },
+        {
             "@id": "scene:scn-pickplace-isaac-panda", "@type": "bdd:SceneHasAgents",
             "of-scene": "scene-lab:scn-pickplace",
             "has-agent": [ "isaac-agn:panda" ]
