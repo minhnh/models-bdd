@@ -61,12 +61,7 @@
                 [
                     "env-lab:obj-tray", "lab:ws-table", "lab:ws-table",
                     ["isaac-agn:kinova1", "isaac-agn:kinova2"],
-                    0.5, 0.5
-                ],
-                [
-                    "env-lab:obj-tray", "lab:ws-table", "lab:ws-table",
-                    ["isaac-agn:kinova1", "isaac-agn:kinova2"],
-                    0.5, 0.7
+                    0.3, 0.8
                 ]
             ]
         },

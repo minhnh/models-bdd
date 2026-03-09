@@ -54,7 +54,7 @@
            "clause-of": "tmpl:pickplace-then",
            "ref-object": "tmpl:var-target-obj",
            "ref-agent": "tmpl:var-agent",
-           "after-event": "tmpl:evt-pick-end", "before-event": "tmpl:evt-place-start"
+           "after-event": "tmpl:evt-pick-end", "before-event": "tmpl:evt-place-end"
         },
 
         {
