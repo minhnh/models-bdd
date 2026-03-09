@@ -1,0 +1,52 @@
+{
+    "@context": [
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/task.json",
+        {
+            "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-grc/",
+            "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
+            "env-lab": "https://secorolab.github.io/models/environments/secorolab/",
+            "isaac-agn": "https://secorolab.github.io/models/agents/isaac-sim/",
+            "scene-lab": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/",
+            "scene-grc": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/grc/",
+            "scene-isaac": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/isaac/"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "scene-grc:objects", "@type": "bdd:SceneHasObjects",
+            "of-scene": "scene-lab:scn-pickplace",
+            "has-object": [ "env-lab:obj-tray" ]
+        },
+        {
+            "@id": "scene-grc:workspaces", "@type": "bdd:SceneHasWorkspaces",
+            "of-scene": "scene-lab:scn-pickplace",
+            "has-workspace": ["env-lab:ws-table"]
+        },
+        {
+            "@id": "var:var-table", "@type": [ "bdd:TaskVariation", "bdd:TableVariation" ],
+            "of-task": "tmpl:task-pickplace",
+            "variable-list": [ "tmpl:var-target-obj", "tmpl:var-pick-ws", "tmpl:var-place-ws", "tmpl:var-agent" ],
+            "rows": [
+                [ "env-lab:obj-tray", "lab:ws-table", "lab:ws-table", ["isaac-agn:kinova1", "isaac-agn:kinova2"] ]
+            ]
+        },
+        {
+            "@id": "var:scr-var-grc", "@type": "bdd:ScenarioVariant",
+            "of-template": "tmpl:tmpl-pickplace",
+            "has-scene": [
+                "scene-grc:objects",
+                "scene-grc:workspaces",
+                "scene-isaac:scn-pickplace-isaac-kinovas"
+            ],
+            "has-variation": "var:var-table"
+        },
+        {
+            "@id": "var:us-pickplace", "@type": "bdd:UserStory",
+            "has-criteria": [
+                "var:scr-var-grc"
+            ]
+        }
+    ]
+}
