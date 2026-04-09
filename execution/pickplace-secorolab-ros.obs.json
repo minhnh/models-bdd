@@ -24,7 +24,7 @@
             "@type": ["Point", "Euclidean", "3D"]
         },
         {
-            "@id": "oa-geom:base-link-frame",
+            "@id": "lab-geom:base-link-frame",
             "@type": [ "Frame", "HasFrameId"],
             "frame-id": "/base_link"
         },
@@ -46,7 +46,7 @@
             ],
             "unit": "M",
             "message-type": "geometry_msgs/msg/PointStamped",
-            "as-seen-by": "oa-geom:base-link-frame",
+            "as-seen-by": "lab-geom:base-link-frame",
             "topic-name": "/obj-bin1-position"
         },
         { "@id": "tmpl:flc-located-at-pick-ws", "horizon-seconds": 1.5 },
