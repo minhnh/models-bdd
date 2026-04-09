@@ -18,7 +18,7 @@
         { "@id": "var:var-kinova1-speed", "@type": "bdd:ScenarioVariable" },
         { "@id": "var:var-kinova2-speed", "@type": "bdd:ScenarioVariable" },
         {
-           "@id": "var:flc-config-kionva1-speed",
+           "@id": "var:flc-config-kinova1-speed",
            "@type": [
                 "bdd:FluentClause", "bdd:HasConfigPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
            ],
@@ -29,7 +29,7 @@
            "before-event": "tmpl:evt-pick-start", "horizon-seconds": 1.0
         },
         {
-           "@id": "var:flc-config-kionva2-speed",
+           "@id": "var:flc-config-kinova2-speed",
            "@type": [
                 "bdd:FluentClause", "bdd:HasConfigPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
            ],
@@ -59,7 +59,7 @@
             ],
             "rows": [
                 [
-                    "env-lab:obj-tray", "lab:ws-table", "lab:ws-table",
+                    "env-lab:obj-tray", "env-lab:ws-table", "env-lab:ws-table",
                     ["isaac-agn:kinova1", "isaac-agn:kinova2"],
                     0.3, 0.8
                 ]
@@ -74,8 +74,8 @@
                 "scene-isaac:scn-pickplace-isaac-kinovas"
             ],
             "has-clause": [
-                "var:flc-config-kionva1-speed",
-                "var:flc-config-kionva2-speed"
+                "var:flc-config-kinova1-speed",
+                "var:flc-config-kinova2-speed"
             ],
             "has-variation": "var:var-table"
         },
