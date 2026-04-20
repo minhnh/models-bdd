@@ -47,6 +47,22 @@
         },
 
         {
+            "@id": "tmpl:flc-no-collide",
+            "@type": [
+                "bdd:FluentClause", "bdd:StringTemplatePredicate",
+                "time:TimeConstraint", "time:DuringEventsConstraint"
+            ],
+            "tmpl-str": "\"{robot}\" does not collide with \"{ws1}\" and \"{ws2}\"",
+            "arg-names": ["robot", "ws1", "ws2"],
+            "arg-variables": [
+                {"@id": "tmpl:var-agent"}, {"@id": "tmpl:var-pick-ws"}, {"@id": "tmpl:var-place-ws"}
+            ],
+            "clause-of": "tmpl:pickplace-then",
+            "after-event": "tmpl:evt-pick-start",
+            "before-event": "tmpl:evt-place-end"
+        },
+
+        {
            "@id": "tmpl:flc-is-held",
            "@type": [
                 "bdd:FluentClause", "bdd:IsHeldPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"
@@ -84,7 +100,7 @@
             "has-scene": "scene:scn-pickplace",
             "has-clause": [
                 "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace",
-                "tmpl:flc-is-held", "tmpl:flc-located-at-place-ws"
+                "tmpl:flc-is-held", "tmpl:flc-located-at-place-ws", "tmpl:flc-no-collide"
             ],
             "after-event": "tmpl:evt-scr-start", "before-event": "tmpl:evt-scr-end"
         }
