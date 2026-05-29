@@ -24,12 +24,7 @@ class QueriesTest(unittest.TestCase):
 
     def test_scenario_execution_query(self):
         graph = Dataset()
-        for url, fmt in SPEC_MODEL_URLS.items():
-            try:
-                graph.parse(url, format=fmt)
-            except HTTPError as e:
-                raise RuntimeError(f"HTTPError for URL '{url}': {e}")
-        for url, fmt in EXEC_MODEL_URLS.items():
+        for url, fmt in {**SPEC_MODEL_URLS, **EXEC_MODEL_URLS}.items():
             try:
                 graph.parse(url, format=fmt)
             except HTTPError as e:

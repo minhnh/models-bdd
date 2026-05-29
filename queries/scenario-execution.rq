@@ -12,7 +12,7 @@ CONSTRUCT {
     ?bhvImpl a ?bhvImplType ;
         bhv:of-behaviour ?behaviour .
     ?obsPolicy a ?obsPolicyType ;
-        bhv:of-clause ?fluentClause .
+        bdd:of-clause ?fluentClause .
     ?behaviour a ?bhvType .
 }
 WHERE {
