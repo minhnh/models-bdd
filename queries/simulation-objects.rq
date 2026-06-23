@@ -1,12 +1,11 @@
 # SPDX-License-Identifier:  MPL-2.0
 PREFIX env: <https://secorolab.github.io/metamodels/environment#>
 PREFIX exec: <https://secorolab.github.io/metamodels/execution-context#>
-PREFIX sim: <https://secorolab.github.io/metamodels/simulation#>
 PREFIX py: <https://secorolab.github.io/metamodels/languages/python#>
 
 CONSTRUCT {
     ?obj env:object-model ?objModel ;
-        sim:has-config ?objConfigs .
+        exec:has-config ?objConfigs .
     ?objModel a ?objModelType ;
         exec:path ?resourcePath ;
         py:module-name ?pyModule ;
@@ -19,7 +18,7 @@ WHERE {
     ?modObj a env:ModelledObject ;
         env:object-model ?objModel .
     OPTIONAL {
-        ?modObj sim:has-config ?objConfigs .
+        ?modObj exec:has-config ?objConfigs .
     }
 
     ?objModel a env:ObjectModel ;
