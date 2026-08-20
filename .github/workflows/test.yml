@@ -2,7 +2,9 @@ name: Test models
 
 on:
   pull_request:
+    branches: [ "main" ]
   push:
+    branches: [ "main" ]
 
 jobs:
   pytest:
