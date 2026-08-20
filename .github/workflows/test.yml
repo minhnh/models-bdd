@@ -8,23 +8,26 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
-        with:
-          repository: secorolab/metamodels
-          path: metamodels
-          submodules: recursive
-      - uses: actions/checkout@v4
+      - name: Checkout rdf-utils
+        uses: actions/checkout@v7
         with:
           repository: minhnh/rdf-utils
+          ref: main
           path: rdf-utils
-      - uses: actions/setup-python@v5
+      - name: Checkout models-bdd
+        uses: actions/checkout@v7
+        with:
+          path: models-bdd
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install pytest ./rdf-utils
-      - name: Link checked-out models into the resolver cache
+      - name: Install dependencies
         run: |
-          mkdir -p ~/.cache/rdf-utils/secoro/models/acceptance-criteria
-          ln -s "$GITHUB_WORKSPACE/metamodels" ~/.cache/rdf-utils/secoro/metamodels
-          ln -s "$GITHUB_WORKSPACE" ~/.cache/rdf-utils/secoro/models/acceptance-criteria/bdd
-      - run: pytest -q
+          python -m pip install --upgrade pip
+          python -m pip install ruff pytest
+          python -m pip install "./rdf-utils[all]"
+      - name: Lint with Ruff
+        run: ruff check models-bdd/tests
+      - name: Test with pytest
+        run: pytest -q models-bdd/tests
