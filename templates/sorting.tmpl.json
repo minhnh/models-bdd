@@ -3,7 +3,7 @@
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/behaviour.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/task.json",
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/time.json",
+        "https://secorolab.github.io/metamodels/time-constraint.json",
         {
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
             "scene": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/"
@@ -13,11 +13,11 @@
         { "@id": "tmpl:bhv-pickplace", "@type": ["bhv:Behaviour", "bhv:Pick", "bhv:Place"] },
         { "@id": "tmpl:task-sorting", "@type": "task:Task" },
 
-        { "@id": "tmpl:evt-pick-start", "@type": "time:Event" },
-        { "@id": "tmpl:evt-place-end", "@type": "time:Event" },
-        { "@id": "tmpl:evt-sort-end", "@type": "time:Event" },
-        { "@id": "tmpl:evt-scr-start", "@type": "time:Event" },
-        { "@id": "tmpl:evt-scr-end", "@type": "time:Event" },
+        { "@id": "tmpl:evt-pick-start", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-place-end", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-sort-end", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-scr-start", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-scr-end", "@type": "time:Instant" },
 
         { "@id": "tmpl:sorting-given", "@type": "bdd:Given" },
         { "@id": "tmpl:sorting-when", "@type": "bdd:When" },
@@ -40,7 +40,7 @@
 
         {
             "@id": "tmpl:forall-sort-objects", "@type": "bdd:ForAll",
-            "variable": "var-forall-obj", "in-set": "tmpl:var-sort-objects",
+            "variable": "tmpl:var-forall-obj", "in-set": "tmpl:var-sort-objects",
             "clause-of": "tmpl:sorting-when",
             "has-clause": [
                 "tmpl:flc-located-at-pick-ws", "tmpl:when-pickplace",
@@ -51,7 +51,7 @@
         {
            "@id": "tmpl:flc-located-at-pick-ws",
            "@type": [
-                "bdd:FluentClause", "bdd:LocatedAtPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
+                "bdd:FluentClause", "bdd:LocatedAtPredicate", "tc:TimeConstraint", "tc:BeforeEventConstraint"
            ],
            "clause-of": "tmpl:sorting-given",
            "ref-object": "tmpl:var-forall-obj",
@@ -61,7 +61,7 @@
 
         {
             "@id": "tmpl:when-pickplace",
-            "@type": ["bdd:WhenBehaviour", "time:TimeConstraint", "time:DuringEventsConstraint"],
+            "@type": ["bdd:WhenBehaviour", "tc:TimeConstraint", "tc:DuringEventsConstraint"],
             "of-behaviour": "tmpl:bhv-pickplace",
             "clause-of": "tmpl:sorting-when",
             "target-obj": "tmpl:var-forall-obj",
@@ -82,7 +82,7 @@
         {
            "@id": "tmpl:flc-located-at-place-ws",
            "@type": [
-                "bdd:FluentClause", "bdd:LocatedAtPredicate", "time:TimeConstraint", "time:AfterEventConstraint"
+                "bdd:FluentClause", "bdd:LocatedAtPredicate", "tc:TimeConstraint", "tc:AfterEventConstraint"
            ],
            "clause-of": "tmpl:sorting-then",
            "ref-object": "tmpl:var-forall-obj",
@@ -93,7 +93,7 @@
         {
            "@id": "tmpl:flc-move-safely",
            "@type": [
-                "bdd:FluentClause", "bdd:MoveSafelyPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"
+                "bdd:FluentClause", "bdd:MoveSafelyPredicate", "tc:TimeConstraint", "tc:DuringEventsConstraint"
            ],
            "clause-of": "tmpl:sorting-then",
            "ref-agent": "tmpl:var-agent",
@@ -103,7 +103,7 @@
         {
            "@id": "tmpl:flc-sorted",
            "@type": [
-                "bdd:FluentClause", "bdd:SortedIntoPredicate", "time:TimeConstraint", "time:AfterEventConstraint"
+                "bdd:FluentClause", "bdd:SortedIntoPredicate", "tc:TimeConstraint", "tc:AfterEventConstraint"
            ],
            "clause-of": "tmpl:sorting-then",
            "ref-object": "tmpl:var-sort-objects",
@@ -113,7 +113,7 @@
 
         {
             "@id": "tmpl:tmpl-sorting",
-            "@type": ["bdd:ScenarioTemplate", "time:TimeConstraint", "time:DuringEventsConstraint"],
+            "@type": ["bdd:ScenarioTemplate", "tc:TimeConstraint", "tc:DuringEventsConstraint"],
             "of-scenario": "tmpl:scenario-sorting",
             "has-scene": "scene:scn-pickplace",
             "has-clause": [

@@ -3,7 +3,7 @@
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/behaviour.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/task.json",
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/time.json",
+        "https://secorolab.github.io/metamodels/time-constraint.json",
         {
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
             "scene": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/"
@@ -13,12 +13,12 @@
         { "@id": "tmpl:bhv-pickplace", "@type": ["bhv:Behaviour", "bhv:Pick", "bhv:Place"] },
         { "@id": "tmpl:task-pickplace", "@type": "task:Task" },
 
-        { "@id": "tmpl:evt-scr-start", "@type": "time:Event" },
-        { "@id": "tmpl:evt-scr-end", "@type": "time:Event" },
-        { "@id": "tmpl:evt-pick-start", "@type": "time:Event" },
-        { "@id": "tmpl:evt-pick-end", "@type": "time:Event" },
-        { "@id": "tmpl:evt-place-start", "@type": "time:Event" },
-        { "@id": "tmpl:evt-place-end", "@type": "time:Event" },
+        { "@id": "tmpl:evt-scr-start", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-scr-end", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-pick-start", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-pick-end", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-place-start", "@type": "time:Instant" },
+        { "@id": "tmpl:evt-place-end", "@type": "time:Instant" },
 
         { "@id": "tmpl:pickplace-given", "@type": "bdd:Given" },
         { "@id": "tmpl:pickplace-when", "@type": "bdd:When" },
@@ -39,7 +39,7 @@
 
         {
            "@id": "tmpl:flc-located-at-pick-ws",
-           "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"],
+           "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate", "tc:TimeConstraint", "tc:BeforeEventConstraint"],
            "clause-of": "tmpl:pickplace-given",
            "ref-object": "tmpl:var-target-obj",
            "ref-workspace": "tmpl:var-pick-ws",
@@ -50,7 +50,7 @@
             "@id": "tmpl:flc-no-collide",
             "@type": [
                 "bdd:FluentClause", "bdd:StringTemplatePredicate",
-                "time:TimeConstraint", "time:DuringEventsConstraint"
+                "tc:TimeConstraint", "tc:DuringEventsConstraint"
             ],
             "tmpl-str": "\"{robot}\" does not collide with \"{ws1}\" and \"{ws2}\"",
             "arg-names": ["robot", "ws1", "ws2"],
@@ -65,7 +65,7 @@
         {
            "@id": "tmpl:flc-is-held",
            "@type": [
-                "bdd:FluentClause", "bdd:IsHeldPredicate", "time:TimeConstraint", "time:DuringEventsConstraint"
+                "bdd:FluentClause", "bdd:IsHeldPredicate", "tc:TimeConstraint", "tc:DuringEventsConstraint"
            ],
            "clause-of": "tmpl:pickplace-then",
            "ref-object": "tmpl:var-target-obj",
@@ -75,7 +75,7 @@
 
         {
            "@id": "tmpl:flc-located-at-place-ws",
-           "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate", "time:TimeConstraint", "time:AfterEventConstraint"],
+           "@type": ["bdd:FluentClause", "bdd:LocatedAtPredicate", "tc:TimeConstraint", "tc:AfterEventConstraint"],
            "clause-of": "tmpl:pickplace-then",
            "ref-object": "tmpl:var-target-obj",
            "ref-workspace": "tmpl:var-place-ws",
@@ -84,7 +84,7 @@
 
         {
             "@id": "tmpl:when-pickplace",
-            "@type": ["bdd:WhenBehaviour", "time:TimeConstraint", "time:DuringEventsConstraint"],
+            "@type": ["bdd:WhenBehaviour", "tc:TimeConstraint", "tc:DuringEventsConstraint"],
             "of-behaviour": "tmpl:bhv-pickplace",
             "clause-of": "tmpl:pickplace-when",
             "target-obj": "tmpl:var-target-obj",
@@ -95,7 +95,7 @@
 
         {
             "@id": "tmpl:tmpl-pickplace",
-            "@type": ["bdd:ScenarioTemplate", "time:TimeConstraint", "time:DuringEventsConstraint" ],
+            "@type": ["bdd:ScenarioTemplate", "tc:TimeConstraint", "tc:DuringEventsConstraint" ],
             "of-scenario": "tmpl:scenario-pickplace",
             "has-scene": "scene:scn-pickplace",
             "has-clause": [

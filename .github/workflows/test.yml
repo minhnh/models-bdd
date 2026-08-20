@@ -1,0 +1,35 @@
+name: Test models
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout rdf-utils
+        uses: actions/checkout@v7
+        with:
+          repository: minhnh/rdf-utils
+          ref: main
+          path: rdf-utils
+      - name: Checkout models-bdd
+        uses: actions/checkout@v7
+        with:
+          path: models-bdd
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ruff pytest
+          python -m pip install "./rdf-utils[all]"
+      - name: Lint with Ruff
+        run: ruff check models-bdd/tests
+      - name: Test with pytest
+        run: pytest -q models-bdd/tests

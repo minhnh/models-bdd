@@ -6,12 +6,14 @@
         "https://comp-rob2b.github.io/metamodels/qudt.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/behaviour.json",
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/time.json",
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/observation.json",
+        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/execution-context.json",
+        "https://secorolab.github.io/metamodels/time-constraint.json",
+        "https://secorolab.github.io/metamodels/observation.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/ros.json",
         "https://secorolab.github.io/metamodels/languages/python.json",
         {
             "tmpl": "https://secorolab.github.io/models/acceptance-criteria/bdd/templates/",
+            "scene": "https://secorolab.github.io/models/acceptance-criteria/bdd/scenes/secorolab/",
             "var": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-isaac/",
             "var-grc": "https://secorolab.github.io/models/acceptance-criteria/bdd/variants/pickplace-grc/",
             "obs-ros": "https://secorolab.github.io/models/observation/ros/",
@@ -57,20 +59,35 @@
         { "@id": "tmpl:flc-located-at-pick-ws", "horizon-seconds": 1.5 },
         { "@id": "tmpl:flc-located-at-place-ws", "horizon-seconds": 1.5 },
         {
-            "@id": "obs-ros:located-at-pick-topic", "@type": [ "ObservationPolicy", "ROSTopic" ],
+            "@id": "obs-ros:located-at-pick-topic",
+            "@type": [
+                "ObservationPolicy", "DirectTrinaryPolicy", "ROSTopic",
+                "TimeConstraint", "BeforeEventConstraint"
+            ],
             "of-clause": "tmpl:flc-located-at-pick-ws",
+            "before-event": "tmpl:evt-pick-start", "horizon-seconds": 1.5,
             "type-name": "bdd_ros2_interfaces/TrinaryStamped",
             "channel-name": "/obs_policy/located_at_pick_ws"
         },
         {
-            "@id": "obs-ros:is-held-topic", "@type": [ "ObservationPolicy", "ROSTopic" ],
+            "@id": "obs-ros:is-held-topic",
+            "@type": [
+                "ObservationPolicy", "DirectTrinaryPolicy", "ROSTopic",
+                "TimeConstraint", "DuringEventsConstraint"
+            ],
             "of-clause": "tmpl:flc-is-held",
+            "after-event": "tmpl:evt-pick-end", "before-event": "tmpl:evt-place-end",
             "type-name": "bdd_ros2_interfaces/TrinaryStamped",
             "channel-name": "/obs_policy/is_held"
         },
         {
-            "@id": "obs-ros:located-at-place-topic", "@type": [ "ObservationPolicy", "ROSTopic" ],
+            "@id": "obs-ros:located-at-place-topic",
+            "@type": [
+                "ObservationPolicy", "DirectTrinaryPolicy", "ROSTopic",
+                "TimeConstraint", "AfterEventConstraint"
+            ],
             "of-clause": "tmpl:flc-located-at-place-ws",
+            "after-event": "tmpl:evt-place-end", "horizon-seconds": 1.5,
             "type-name": "bdd_ros2_interfaces/TrinaryStamped",
             "channel-name": "/obs_policy/located_at_place_ws"
         },
@@ -80,11 +97,16 @@
             "type-name": "bdd_ros2_interfaces/Behaviour", "channel-name": "/bdd/mockup_bhv_server"
         },
         {
+            "@id": "obs-ros:pickplace-scene-inst", "@type": "exec:SceneInstance",
+            "of-scene": "scene:scn-pickplace"
+        },
+        {
             "@id": "obs-ros:pickplace-ros", "@type": "bdd:ScenarioExecution",
             "of-variant": [
                 "var:scr-var-pickplace", "var:scr-var-sorting", "var-grc:scr-var-grc"
             ],
             "has-behaviour-impl": "bhv-ros:pickplace-mockup",
+            "runs-scene": "obs-ros:pickplace-scene-inst",
             "has-policy": [
                 "obs-ros:located-at-pick-topic",
                 "obs-ros:is-held-topic",
