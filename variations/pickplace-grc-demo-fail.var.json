@@ -1,6 +1,6 @@
 {
     "@context": [
-        "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/time.json",
+        "https://secorolab.github.io/metamodels/time-constraint.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/environment.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/bdd.json",
         "https://secorolab.github.io/metamodels/acceptance-criteria/bdd/task.json",
@@ -20,7 +20,7 @@
         {
            "@id": "var:flc-config-kinova1-speed",
            "@type": [
-                "bdd:FluentClause", "bdd:HasConfigPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
+                "bdd:FluentClause", "bdd:HasConfigPredicate", "tc:TimeConstraint", "tc:BeforeEventConstraint"
            ],
            "clause-of": "tmpl:pickplace-given",
            "config-target": "isaac-agn:kinova1",
@@ -31,7 +31,7 @@
         {
            "@id": "var:flc-config-kinova2-speed",
            "@type": [
-                "bdd:FluentClause", "bdd:HasConfigPredicate", "time:TimeConstraint", "time:BeforeEventConstraint"
+                "bdd:FluentClause", "bdd:HasConfigPredicate", "tc:TimeConstraint", "tc:BeforeEventConstraint"
            ],
            "clause-of": "tmpl:pickplace-given",
            "config-target": "isaac-agn:kinova2",

@@ -1,0 +1,30 @@
+name: Test models
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: secorolab/metamodels
+          path: metamodels
+          submodules: recursive
+      - uses: actions/checkout@v4
+        with:
+          repository: minhnh/rdf-utils
+          path: rdf-utils
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest ./rdf-utils
+      - name: Link checked-out models into the resolver cache
+        run: |
+          mkdir -p ~/.cache/rdf-utils/secoro/models/acceptance-criteria
+          ln -s "$GITHUB_WORKSPACE/metamodels" ~/.cache/rdf-utils/secoro/metamodels
+          ln -s "$GITHUB_WORKSPACE" ~/.cache/rdf-utils/secoro/models/acceptance-criteria/bdd
+      - run: pytest -q

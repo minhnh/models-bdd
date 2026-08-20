@@ -1,6 +1,5 @@
 # SPDX-License-Identifier:  MPL-2.0
 PREFIX bdd: <https://secorolab.github.io/metamodels/acceptance-criteria/bdd#>
-PREFIX time: <https://secorolab.github.io/metamodels/time#>
 PREFIX agn: <https://secorolab.github.io/metamodels/agent#>
 PREFIX env: <https://secorolab.github.io/metamodels/environment#>
 PREFIX bhv: <https://secorolab.github.io/metamodels/behaviour#>

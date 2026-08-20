@@ -1,5 +1,5 @@
 PREFIX bdd: <https://secorolab.github.io/metamodels/acceptance-criteria/bdd#>
-PREFIX time: <https://secorolab.github.io/metamodels/time#>
+PREFIX tc: <https://secorolab.github.io/metamodels/time-constraint#>
 
 CONSTRUCT {
     ?scenarioTmpl
@@ -21,7 +21,7 @@ WHERE {
         bdd:has-clause ?clause .
 
     ?clause a bdd:FluentClause ;
-        a time:TimeConstraint ;
+        a tc:TimeConstraint ;
         a ?fcTypes ;
         bdd:holds ?fluent .
     OPTIONAL { ?clause bdd:ref-object ?taskObject }
